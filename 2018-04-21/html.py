@@ -5,12 +5,15 @@ https://pypi.org/project/lxml/
 '''
 import urllib.request
 from lxml import etree
+import ssl
 
 def spider():
     url = "https://pypi.org/project/lxml/"
     headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 6.1; WOW64)"}
     request = urllib.request.Request(url, headers=headers)
-    response = urllib.request.urlopen(request)
+    context = ssl._create_unverified_context()
+    ssl._create_default_https_context = ssl._create_unverified_context()
+    response = urllib.request.urlopen(request, context=context)
     content = response.read()
     return content.decode('utf-8')
 
@@ -21,7 +24,10 @@ html = etree.HTML(html)
 
 links = html.xpath("//a/@href")
 links2 = html.xpath("//img/@src")
-new_links = links + links2
+links3 = html.xpath("//link/@href")
+links4 = html.xpath("//meta/@content")
+links5 = html.xpath("//script/@src")
+new_links = links + links2 + links3 + links4 +links5
 
 count = 0
 result = []
