@@ -6,9 +6,7 @@
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
-from selenium import webdriver
-import time
-from zhihu.spiders.crawl import CrawlSpider
+
 
 class ZhihuSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
@@ -80,12 +78,8 @@ class ZhihuDownloaderMiddleware(object):
         # - or return a Request object
         # - or raise IgnoreRequest: process_exception() methods of
         #   installed downloader middleware will be called
-        driver = webdriver.PhantomJS()
-        driver.get(CrawlSpider.start_urls)
-        while 1:
-            driver.execute_script("window.scrollTo(40000,document.body.scrollHeight)")
-            time.sleep(3)
-            driver.execute_script('alert("To Bottom")')
+        pass
+
 
     def process_response(self, request, response, spider):
         # Called with the response returned from the downloader.

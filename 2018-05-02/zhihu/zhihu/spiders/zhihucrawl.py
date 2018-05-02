@@ -1,14 +1,24 @@
 # -*- coding: utf-8 -*-
 import scrapy
-from zhihu.items import ZhihuItem
+import items
+from selenium import webdriver
+import time
 
 class CrawlSpider(scrapy.Spider):
-    name = 'crawl'
+    name = 'zhihucrawl'
     allowed_domains = ['zhihu.com']
-    start_urls = ["https://www.zhihu.com/question/36011809"]
+    start_urls = "https://www.zhihu.com/question/36011809"
+    driver = webdriver.Firefox()
+    driver.get(start_urls)
+
+    driver.execute_script("window.scrollTo(0,400)")
+    time.sleep(10)
+
+    response = driver.page_source
+
 
     def parse(self, response):
-        zh = ZhihuItem()
+        zh = items.ZhihuItem()
 
         answers = response.xpath(r'//div[@class="List-item"]')
         for answer in answers:
@@ -26,5 +36,3 @@ class CrawlSpider(scrapy.Spider):
             zh['photos'] = answer.xpath(r'.//img/@data-original').extract()
 
             yield zh
-
-
