@@ -5,6 +5,7 @@ from selenium import webdriver
 import time
 from lxml import etree
 
+
 class CrawlSpider(scrapy.Spider):
     name = 'zhihucrawl'
     allowed_domains = ['zhihu.com']
@@ -40,7 +41,7 @@ class CrawlSpider(scrapy.Spider):
                 zh['user_answer'] = answer.xpath(
                     r'.//div[@class="RichContent RichContent--unescapable"]/div[1]/span/p/text()')
 
-            zh['photos'] = answer.xpath(r'.//img/@data-original')
+            zh['image_urls'] = answer.xpath(r'.//img/@data-original')
 
             yield zh
 

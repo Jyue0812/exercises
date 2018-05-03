@@ -95,7 +95,6 @@ DOWNLOADER_MIDDLEWARES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-
 # MONGODB 主机名
 MONGODB_HOST = "127.0.0.1"
 # MONGODB 端口号

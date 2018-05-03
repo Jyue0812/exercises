@@ -24,4 +24,5 @@ class ZhihuPipeline(object):
     def process_item(self, item, spider):
         data = dict(item)
         self.post.insert(data)
+
         return item

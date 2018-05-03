@@ -12,5 +12,6 @@ class ZhihuItem(scrapy.Item):
     user_name = scrapy.Field()
     user_sen = scrapy.Field()
     user_answer = scrapy.Field()
-    photos = scrapy.Field()
+    image_urls = scrapy.Field()
+
 
