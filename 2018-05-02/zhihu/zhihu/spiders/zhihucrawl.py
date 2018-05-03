@@ -1,24 +1,27 @@
 # -*- coding: utf-8 -*-
 import scrapy
-import items
+import os
+from zhihu.items import ZhihuItem
 from selenium import webdriver
 import time
 
 class CrawlSpider(scrapy.Spider):
     name = 'zhihucrawl'
     allowed_domains = ['zhihu.com']
-    start_urls = "https://www.zhihu.com/question/36011809"
-    driver = webdriver.Firefox()
-    driver.get(start_urls)
+    start_urls = ["https://www.zhihu.com/question/36011809",]
 
-    driver.execute_script("window.scrollTo(0,400)")
+    chromedriver = r"d://chromedriver.exe"
+    # os.environ["webdriver.chrome.driver"] = chromedriver
+    driver = webdriver.Chrome(chromedriver)
+    driver.get("https://www.zhihu.com/question/36011809")
+
+    driver.execute_script("window.scrollTo(0,400000)")
     time.sleep(10)
 
-    response = driver.page_source
-
+    # driver.quit()
 
     def parse(self, response):
-        zh = items.ZhihuItem()
+        zh = ZhihuItem()
 
         answers = response.xpath(r'//div[@class="List-item"]')
         for answer in answers:
