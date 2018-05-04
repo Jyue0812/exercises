@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    height: 52px;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    position: absolute;
+}
+
+.header-center{
+    width:1200px;
+    height: 52px;
+    position:relative;
+    margin: 0 auto;
+
+}
+.logo{
+    position: relative;
+    float: left;
+    width: 64px;
+}
+.logo img {
+    width: 64px;
+    line-height: 52px;
+    height: 52px;
+}
+
+.sections{
+    margin-left: 27px;
+    margin-right: 28px;
+    width: 188px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    float: left;
+}
+.sections ul{
+    height: 52px;
+}
+.sections ul li{
+    list-style: none;
+    position: relative;
+    float: left;
+}
+.sections ul li a{
+    text-decoration: none;
+    padding: 0 15px;
+    line-height: 52px;
+}
+.sections ul li:first-of-type a{
+    color: #444;
+}
+.sections ul li a{
+    color: #8590a6;
+}
