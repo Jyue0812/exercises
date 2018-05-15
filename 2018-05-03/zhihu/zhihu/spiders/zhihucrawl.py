@@ -9,7 +9,7 @@ from lxml import etree
 class CrawlSpider(scrapy.Spider):
     name = 'zhihucrawl'
     allowed_domains = ['zhihu.com']
-    start_urls = ["https://www.zhihu.com/question/36011809",]
+    start_urls = ["https://www.zhihu.com/question/31584701",]
 
     def parse(self, response):
         zh = ZhihuItem()
@@ -19,7 +19,7 @@ class CrawlSpider(scrapy.Spider):
         driver.get(self.start_urls[0])
 
         page_height = 10000
-        while page_height <= 489744:
+        while page_height <= 41500:
             driver.execute_script("window.scrollTo(0," + str(page_height) + ")")
             page_height += 10000
             time.sleep(3)
