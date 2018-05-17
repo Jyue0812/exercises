@@ -15,8 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
+from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('ds_user.urls')),
+    path('product/', include('ds_product.urls')),
+    url(r'^$', index, name='index'),
+    url(r'^about/$', about, name='about'),
+    url(r'^contact/$', contact, name='contact'),
 ]
+
+handler403 = permission_denied
+handler404 = page_not_found
+handler500 = page_error

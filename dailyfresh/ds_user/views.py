@@ -49,8 +49,6 @@ def info(request):
         'user_name':request.session['user_name']}
     return render(request, 'ds_user/info.html', context)
 
-
-
 def register_exist(request):
     uname=request.GET.get('uname')
     count=UserInfo.objects.filter(uname=uname).count()
@@ -79,3 +77,6 @@ def register_handle(request):
     user.save()
     #注册成功，转到登录页面
     return redirect('../login/')
+
+def wishlist(request):
+    return render(request, 'ds_user/wishlist.html')
