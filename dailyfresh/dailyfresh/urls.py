@@ -27,6 +27,6 @@ urlpatterns = [
     url(r'^contact/$', contact, name='contact'),
 ]
 
-handler403 = permission_denied
-handler404 = page_not_found
-handler500 = page_error
+# handler403 = permission_denied
+# handler404 = page_not_found
+# handler500 = page_error

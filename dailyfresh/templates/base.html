@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Register</title>
+<title>{% block title %}默认标题{% endblock %}</title>
 <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -105,7 +105,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="menu-top">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Submenu1</h4>
+								<h4>分类一</h4>
 									<ul>
 										<li><a href="{% url "product" %}">配饰</a></li>
 										<li><a href="{% url "product" %}">包包</a></li>
@@ -117,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Submenu2</h4>
+								<h4>分类二</h4>
 								<ul>
 										<li><a href="{% url "product" %}">夹克 & 大衣</a></li>
 										<li><a href="{% url "product" %}">牛仔裤</a></li>
@@ -130,7 +130,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Submenu3</h4>
+								<h4>分类三</h4>
 									<ul>
 										<li><a href="{% url "product" %}">衬衫</a></li>
 										<li><a href="{% url "product" %}">鞋靴 & 运动鞋</a></li>
@@ -145,7 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Submenu4</h4>
+								<h4>分类四</h4>
 								<ul>
 									<li><a href="{% url "product" %}">T恤</a></li>
 									<li><a href="{% url "product" %}">内衣 & 袜子</a></li>
@@ -169,7 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="menu-top">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Submenu1</h4>
+								<h4>分类一</h4>
 									<ul>
 										<li><a href="{% url "product" %}">配饰</a></li>
 										<li><a href="{% url "product" %}">包包</a></li>
@@ -181,7 +181,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Submenu2</h4>
+								<h4>分类二</h4>
 								<ul>
 										<li><a href="{% url "product" %}">夹克 & 大衣</a></li>
 										<li><a href="{% url "product" %}">牛仔裤</a></li>
@@ -194,7 +194,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Submenu3</h4>
+								<h4>分类三</h4>
 
 <ul>
 										<li><a href="{% url "product" %}">衬衫</a></li>
@@ -210,7 +210,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>Submenu4</h4>
+								<h4>分类四</h4>
 								<ul>
 									<li><a href="{% url "product" %}">T恤</a></li>
 									<li><a href="{% url "product" %}">内衣 & 袜子</a></li>
@@ -230,7 +230,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</li>
 			<li><a class="color3" href="{% url "product" %}">折扣</a></li>
 			<li><a class="color4" href="{% url "about" %}">关于我们</a></li>
-            <li><a class="color5" href="typo.html">Short Codes</a></li>
+            <li><a class="color5" href="typo.html">断码折扣区</a></li>
             <li ><a class="color6" href="{% url "contact" %}">联系我们</a></li>
         </ul>
      </div><!-- /.navbar-collapse -->
@@ -251,7 +251,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="simpleCart_total"></span></div>
 							<img src="/static/images/cart.png" alt=""/></h3>
 						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+						<p><a href="javascript:;" class="simpleCart_empty">清空购物车</a></p>
 
 					</div>
 					<div class="clearfix"> </div>
@@ -336,34 +336,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 
 					<div class="col-md-3 footer-middle-in">
-						<h6>Information</h6>
+						<h6>网站信息</h6>
 						<ul class=" in">
-							<li><a href="../404.html">About</a></li>
-							<li><a href="../others/contact.html">Contact Us</a></li>
-							<li><a href="#">Returns</a></li>
-							<li><a href="../others/contact.html">Site Map</a></li>
+							<li><a href="../404.html">关于我们</a></li>
+							<li><a href="../others/contact.html">联系我们</a></li>
+							<li><a href="../others/contact.html">网站地图</a></li>
 						</ul>
 						<ul class="in in1">
-							<li><a href="#">Order History</a></li>
-							<li><a href="../others/wishlist.html">Wish List</a></li>
+							<li><a href="#">历史订单</a></li>
+							<li><a href="../others/wishlist.html">心愿单</a></li>
 							<li><a href="{% url "login" %}">登录</a></li>
 						</ul>
 						<div class="clearfix"></div>
 					</div>
 					<div class="col-md-3 footer-middle-in">
-						<h6>Tags</h6>
+						<h6>标签</h6>
 						<ul class="tag-in">
-							<li><a href="#">Lorem</a></li>
-							<li><a href="#">Sed</a></li>
-							<li><a href="#">Ipsum</a></li>
-							<li><a href="#">Contrary</a></li>
-							<li><a href="#">Chunk</a></li>
-							<li><a href="#">Amet</a></li>
-							<li><a href="#">Omnis</a></li>
+							<li><a href="#">春夏</a></li>
+							<li><a href="#">新品</a></li>
+							<li><a href="#">5折</a></li>
+							<li><a href="#">限时包邮</a></li>
+							<li><a href="#">反季折扣</a></li>
+							<li><a href="#">专柜同款</a></li>
+							<li><a href="#">满三送一</a></li>
 						</ul>
 					</div>
 					<div class="col-md-3 footer-middle-in">
-						<h6>Newsletter</h6>
+						<h6>订阅电子期刊</h6>
 						<span>Sign up for News Letter</span>
 							<form>
 								<input type="text" value="Enter your E-mail" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter your E-mail';}">
