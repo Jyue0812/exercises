@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Shopin购物网站{% endblock %}
+{% block h1 %}Shopin{% endblock %}
+{% block h2 %}Shopin{% endblock %}
 {% block div %}
 
 	<!--content-->
@@ -8,41 +10,40 @@
 				<div class="content-top">
 					<div class="col-md-6 col-md">
 						<div class="col-1">
-						 <a href="ds_product/detail.html" class="b-link-stroke b-animate-go  thickbox">
+						 <a href="{% url "detail" %}" class="b-link-stroke b-animate-go  thickbox">
 		   <img src="/static/images/pi.jpg" class="img-responsive" alt=""/><div class="b-wrapper1 long-img"><p class="b-animate b-from-right    b-delay03 ">Lorem ipsum</p><label class="b-animate b-from-right    b-delay03 "></label><h3 class="b-animate b-from-left    b-delay03 ">Trendy</h3></div></a>
 
-							<!---<a href="single.html"><img src="images/pi.jpg" class="img-responsive" alt=""></a>-->
 						</div>
 						<div class="col-2">
-							<span>Hot Deal</span>
-							<h2><a href="ds_product/detail.html">Luxurious &amp; Trendy</a></h2>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years</p>
-							<a href="ds_product/detail.html" class="buy-now">Buy Now</a>
+							<span>热门促销</span>
+							<h2><a href="{% url "detail" %}">轻奢 &amp; 时尚</a></h2>
+							<p>每一季，卡尔·拉格斐设计的香奈儿手袋以全新造型、 色彩与材质演绎纷繁多样的款式。由卡尔·拉格斐掌镜，Kaia Gerber演绎。</p>
+							<a href="{% url "detail" %}" class="buy-now">立刻购买</a>
 						</div>
 					</div>
 					<div class="col-md-6 col-md1">
 						<div class="col-3">
-							<a href="ds_product/detail.html"><img src="/static/images/pi1.jpg" class="img-responsive" alt="">
+							<a href="{% url "detail" %}"><img src="/static/images/pi1.jpg" class="img-responsive" alt="">
 							<div class="col-pic">
 								<p>Lorem Ipsum</p>
 								<label></label>
-								<h5>For Men</h5>
+								<h5>男士</h5>
 							</div></a>
 						</div>
 						<div class="col-3">
-							<a href="ds_product/detail.html"><img src="/static/images/pi2.jpg" class="img-responsive" alt="">
+							<a href="{% url "detail" %}"><img src="/static/images/pi2.jpg" class="img-responsive" alt="">
 							<div class="col-pic">
 								<p>Lorem Ipsum</p>
 								<label></label>
-								<h5>For Kids</h5>
+								<h5>儿童</h5>
 							</div></a>
 						</div>
 						<div class="col-3">
-							<a href="ds_product/detail.html"><img src="/static/images/pi3.jpg" class="img-responsive" alt="">
+							<a href="{% url "detail" %}"><img src="/static/images/pi3.jpg" class="img-responsive" alt="">
 							<div class="col-pic">
 								<p>Lorem Ipsum</p>
 								<label></label>
-								<h5>For Women</h5>
+								<h5>女士</h5>
 							</div></a>
 						</div>
 					</div>
@@ -50,7 +51,7 @@
 				</div>
 				<!--products-->
 			<div class="content-mid">
-				<h3>Trending Items</h3>
+				<h3>热销商品</h3>
 				<label class="line"></label>
 				<div class="mid-popular">
 					<div class="col-md-3 item-grid simpleCart_shelfItem">
@@ -59,14 +60,14 @@
 						<img src="/static/images/pc.jpg" class="img-responsive" alt="">
 						<div class="zoom-icon ">
 						<a class="picture" href="/static/images/pc.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="ds_product/detail.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
+						<a href="{% url "detail" %}"><i class="glyphicon glyphicon-menu-right icon"></i></a>
 						</div>
 						</div>
 						<div class="mid-1">
 						<div class="women">
 						<div class="women-top">
-							<span>Women</span>
-							<h6><a href="ds_product/detail.html">Sed ut perspiciati</a></h6>
+							<span>女士</span>
+							<h6><a href="{% url "detail" %}">绿色长袖衬衫</a></h6>
 							</div>
 							<div class="img item_add">
 								<a href="#"><img src="/static/images/ca.png" alt=""></a>
@@ -74,7 +75,7 @@
 							<div class="clearfix"></div>
 							</div>
 							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
+								<p ><label>100.00元</label><em class="item_price">70.00元</em></p>
 								  <div class="block">
 									<div class="starbox small ghosting"> </div>
 								</div>
@@ -91,14 +92,14 @@
 						<img src="/static/images/pc1.jpg" class="img-responsive" alt="">
 						<div class="zoom-icon ">
 						<a class="picture" href="/static/images/pc1.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="ds_product/detail.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
+						<a href="{% url "detail" %}"><i class="glyphicon glyphicon-menu-right icon"></i></a>
 						</div>
 						</div>
 						<div class="mid-1">
 						<div class="women">
 						<div class="women-top">
-							<span>Women</span>
-							<h6><a href="ds_product/detail.html">At vero eos</a></h6>
+							<span>女士</span>
+							<h6><a href="{% url "detail" %}">粉色印花T恤</a></h6>
 							</div>
 							<div class="img item_add">
 								<a href="#"><img src="/static/images/ca.png" alt=""></a>
@@ -106,7 +107,7 @@
 							<div class="clearfix"></div>
 							</div>
 							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
+								<p ><label>100.00元</label><em class="item_price">70.00元</em></p>
 								  <div class="block">
 									<div class="starbox small ghosting"> </div>
 								</div>
@@ -123,14 +124,14 @@
 						<img src="/static/images/pc2.jpg" class="img-responsive" alt="">
 						<div class="zoom-icon ">
 						<a class="picture" href="/static/images/pc2.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="ds_product/detail.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
+						<a href="{% url "detail" %}"><i class="glyphicon glyphicon-menu-right icon"></i></a>
 						</div>
 						</div>
 						<div class="mid-1">
 						<div class="women">
 						<div class="women-top">
-							<span>Men</span>
-							<h6><a href="ds_product/detail.html">Sed ut perspiciati</a></h6>
+							<span>男士</span>
+							<h6><a href="{% url "detail" %}">蓝白黑格纹长袖衬衫</a></h6>
 							</div>
 							<div class="img item_add">
 								<a href="#"><img src="/static/images/ca.png" alt=""></a>
@@ -138,7 +139,7 @@
 							<div class="clearfix"></div>
 							</div>
 							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
+								<p ><label>100.00元</label><em class="item_price">70.00元</em></p>
 								  <div class="block">
 									<div class="starbox small ghosting"> </div>
 								</div>
@@ -155,14 +156,14 @@
 						<img src="/static/images/pc3.jpg" class="img-responsive" alt="">
 						<div class="zoom-icon ">
 						<a class="picture" href="/static/images/pc3.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="ds_product/detail.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
+						<a href="{% url "detail" %}"><i class="glyphicon glyphicon-menu-right icon"></i></a>
 						</div>
 						</div>
 						<div class="mid-1">
 						<div class="women">
 						<div class="women-top">
-							<span>Women</span>
-							<h6><a href="ds_product/detail.html">On the other</a></h6>
+							<span>女士</span>
+							<h6><a href="{% url "detail" %}">红黑白七分袖衬衫</a></h6>
 							</div>
 							<div class="img item_add">
 								<a href="#"><img src="/static/images/ca.png" alt=""></a>
@@ -170,7 +171,7 @@
 							<div class="clearfix"></div>
 							</div>
 							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
+								<p ><label>100.00元</label><em class="item_price">70.00元</em></p>
 								  <div class="block">
 									<div class="starbox small ghosting"> </div>
 								</div>
@@ -190,14 +191,14 @@
 						<img src="/static/images/pc4.jpg" class="img-responsive" alt="">
 						<div class="zoom-icon ">
 						<a class="picture" href="/static/images/pc4.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="ds_product/detail.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
+						<a href="{% url "detail" %}"><i class="glyphicon glyphicon-menu-right icon"></i></a>
 						</div>
 						</div>
 						<div class="mid-1">
 						<div class="women">
 						<div class="women-top">
-							<span>Men</span>
-							<h6><a href="ds_product/detail.html">On the other</a></h6>
+							<span>男士</span>
+							<h6><a href="{% url "detail" %}">红色印花短袖T恤</a></h6>
 							</div>
 							<div class="img item_add">
 								<a href="#"><img src="/static/images/ca.png" alt=""></a>
@@ -205,7 +206,7 @@
 							<div class="clearfix"></div>
 							</div>
 							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
+								<p ><label>100.00元</label><em class="item_price">70.00元</em></p>
 								  <div class="block">
 									<div class="starbox small ghosting"> </div>
 								</div>
@@ -222,14 +223,14 @@
 						<img src="/static/images/pc5.jpg" class="img-responsive" alt="">
 						<div class="zoom-icon ">
 						<a class="picture" href="/static/images/pc5.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="ds_product/detail.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
+						<a href="{% url "detail" %}"><i class="glyphicon glyphicon-menu-right icon"></i></a>
 						</div>
 						</div>
 						<div class="mid-1">
 						<div class="women">
 						<div class="women-top">
-							<span>Men</span>
-							<h6><a href="ds_product/detail.html">Sed ut perspiciati</a></h6>
+							<span>男士</span>
+							<h6><a href="{% url "detail" %}">红白长袖格子衬衫</a></h6>
 							</div>
 							<div class="img item_add">
 								<a href="#"><img src="/static/images/ca.png" alt=""></a>
@@ -237,7 +238,7 @@
 							<div class="clearfix"></div>
 							</div>
 							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
+								<p ><label>100.00元</label><em class="item_price">70.00元</em></p>
 								  <div class="block">
 									<div class="starbox small ghosting"> </div>
 								</div>
@@ -254,14 +255,14 @@
 						<img src="/static/images/pc6.jpg" class="img-responsive" alt="">
 						<div class="zoom-icon ">
 						<a class="picture" href="/static/images/pc6.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="ds_product/detail.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
+						<a href="{% url "detail" %}"><i class="glyphicon glyphicon-menu-right icon"></i></a>
 						</div>
 						</div>
 						<div class="mid-1">
 						<div class="women">
 						<div class="women-top">
-							<span>Women</span>
-							<h6><a href="ds_product/detail.html">At vero eos</a></h6>
+							<span>女士</span>
+							<h6><a href="{% url "detail" %}">红白短袖格纹衬衫带口袋</a></h6>
 							</div>
 							<div class="img item_add">
 								<a href="#"><img src="/static/images/ca.png" alt=""></a>
@@ -269,7 +270,7 @@
 							<div class="clearfix"></div>
 							</div>
 							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
+								<p ><label>100.00元</label><em class="item_price">70.00元</em></p>
 								  <div class="block">
 									<div class="starbox small ghosting"> </div>
 								</div>
@@ -286,14 +287,14 @@
 						<img src="/static/images/pc7.jpg" class="img-responsive" alt="">
 						<div class="zoom-icon ">
 						<a class="picture" href="/static/images/pc7.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="ds_product/detail.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
+						<a href="{% url "detail" %}"><i class="glyphicon glyphicon-menu-right icon"></i></a>
 						</div>
 						</div>
 						<div class="mid-1">
 						<div class="women">
 						<div class="women-top">
-							<span>Men</span>
-							<h6><a href="ds_product/detail.html">Sed ut perspiciati</a></h6>
+							<span>男士</span>
+							<h6><a href="{% url "detail" %}">灰色条纹长袖衬衫</a></h6>
 							</div>
 							<div class="img item_add">
 								<a href="#"><img src="/static/images/ca.png" alt=""></a>
@@ -301,7 +302,7 @@
 							<div class="clearfix"></div>
 							</div>
 							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
+								<p ><label>100.00元</label><em class="item_price">70.00元</em></p>
 								  <div class="block">
 									<div class="starbox small ghosting"> </div>
 								</div>

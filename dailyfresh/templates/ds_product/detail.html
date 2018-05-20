@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block title %}商品详情{% endblock %}
+{% block h1 %}商品详情{% endblock %}
+{% block h2 %}商品详情{% endblock %}
 {% block div %}
 <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
 
@@ -46,19 +48,18 @@
 	</div>	
 <div class="col-md-7 single-top-in">
 						<div class="span_2_of_a1 simpleCart_shelfItem">
-				<h3>Nam liber tempor cum</h3>
-				<p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
+				<h3>绿色条纹短袖T恤</h3>
+				<p class="in-para">T恤女短袖2018夏装冰丝针织圆领彩色条纹韩版薄款百搭潮流修身上衣5251 红棕条纹 均码【适合80-120斤】</p>
 			    <div class="price_single">
-				  <span class="reducedfrom item_price">$140.00</span>
-				 <a href="#">click for offer</a>
+				  <span class="reducedfrom item_price">140.00元</span>
 				 <div class="clearfix"></div>
 				</div>
-				<h4 class="quick">Quick Overview:</h4>
-				<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
+				<h4 class="quick">商品简介:</h4>
+				<p class="quick_desc">T恤做工非常棒，一针一线都很密集规整，细节图亲们可以看得很清楚比版型：此款T恤主推宽松理念，炎热夏季，宽松T恤给您一个清爽、舒适的清凉享受！</p>
 			    <div class="wish-list">
 				 	<ul>
-				 		<li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
-				 	    <li class="compare"><a href="#"><span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>Add to Compare</a></li>
+				 		<li class="wish"><a href="{% url "wishlist" %}"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>加入心愿单</a></li>
+				 	    <li class="compare"><a href="{% url "wishlist" %}"><span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>加入对比</a></li>
 				 	</ul>
 				 </div>
 				 <div class="quantity"> 
@@ -82,7 +83,7 @@
 	</script>
 	<!--quantity-->
 				 
-			    <a href="#" class="add-to item_add hvr-skew-backward">Add to cart</a>
+			    <a href="#" class="add-to item_add hvr-skew-backward">加入购物车</a>
 			<div class="clearfix"> </div>
 			</div>
 		
@@ -92,9 +93,9 @@
 			<div class="tab-head">
 			 <nav class="nav-sidebar">
 		<ul class="nav tabs">
-          <li class="active"><a href="#tab1" data-toggle="tab">Product Description</a></li>
-          <li class=""><a href="#tab2" data-toggle="tab">Additional Information</a></li> 
-          <li class=""><a href="#tab3" data-toggle="tab">Reviews</a></li>  
+          <li class="active"><a href="#tab1" data-toggle="tab">商品详情</a></li>
+          <li class=""><a href="#tab2" data-toggle="tab">其他信息</a></li>
+          <li class=""><a href="#tab3" data-toggle="tab">商品评价(2000+)</a></li>
 		</ul>
 	</nav>
 	<div class="tab-content one">
@@ -150,30 +151,30 @@
 <div class="col-md-3 product-bottom product-at">
 			<!--categories-->
 				<div class=" rsidebar span_1_of_left">
-						<h4 class="cate">Categories</h4>
+						<h4 class="cate">分类</h4>
 							 <ul class="menu-drop">
-							<li class="item1"><a href="#">Men </a>
+							<li class="item1"><a href="#">男士</a>
 								<ul class="cute">
 									<li class="subitem1"><a href="{% url 'product' %}">Cute Kittens </a></li>
 									<li class="subitem2"><a href="{% url 'product' %}">Strange Stuff </a></li>
 									<li class="subitem3"><a href="{% url 'product' %}">Automatic Fails </a></li>
 								</ul>
 							</li>
-							<li class="item2"><a href="#">Women </a>
+							<li class="item2"><a href="#">女士</a>
 								<ul class="cute">
 									<li class="subitem1"><a href="{% url 'product' %}">Cute Kittens </a></li>
 									<li class="subitem2"><a href="{% url 'product' %}">Strange Stuff </a></li>
 									<li class="subitem3"><a href="{% url 'product' %}">Automatic Fails </a></li>
 								</ul>
 							</li>
-							<li class="item3"><a href="#">Kids</a>
+							<li class="item3"><a href="#">童装</a>
 								<ul class="cute">
 									<li class="subitem1"><a href="{% url 'product' %}">Cute Kittens </a></li>
 									<li class="subitem2"><a href="{% url 'product' %}">Strange Stuff </a></li>
 									<li class="subitem3"><a href="{% url 'product' %}">Automatic Fails</a></li>
 								</ul>
 							</li>
-							<li class="item4"><a href="#">Accessories</a>
+							<li class="item4"><a href="#">配饰</a>
 								<ul class="cute">
 									<li class="subitem1"><a href="{% url 'product' %}">Cute Kittens </a></li>
 									<li class="subitem2"><a href="{% url 'product' %}">Strange Stuff </a></li>
@@ -181,7 +182,7 @@
 								</ul>
 							</li>
 									
-							<li class="item4"><a href="#">Shoes</a>
+							<li class="item4"><a href="#">鞋子</a>
 								<ul class="cute">
 									<li class="subitem1"><a href="{% url 'product' %}">Cute Kittens </a></li>
 									<li class="subitem2"><a href="{% url 'product' %}">Strange Stuff </a></li>
@@ -212,7 +213,7 @@
 						</script>
 <!--//menu-->
  <section  class="sky-form">
-					<h4 class="cate">Discounts</h4>
+					<h4 class="cate">折扣幅度</h4>
 					 <div class="row row1 scroll-pane">
 						 <div class="col col-4">
 								<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Upto - 10% (20)</label>
@@ -221,7 +222,7 @@
 								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>40% - 50% (5)</label>
 								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>30% - 20% (7)</label>
 								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>10% - 5% (2)</label>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Other(50)</label>
+								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>其他(50)</label>
 						 </div>
 					 </div>
 				 </section> 				 				 
@@ -232,33 +233,33 @@
 						<h4 class="cate">Type</h4>
 							<div class="row row1 scroll-pane">
 								<div class="col col-4">
-									<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Sofa Cum Beds (30)</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>懒人沙发 (30)</label>
 								</div>
 								<div class="col col-4">
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Bags  (30)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Caps & Hats (30)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Jackets & Coats   (30)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Jeans  (30)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Shirts   (30)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Sunglasses  (30)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Swimwear  (30)</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>包包 (30)</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>帽子 (30)</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>夹克 & 外套 (30)</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>牛仔裤 (30)</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>T恤 (30)</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>墨镜 (30)</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>泳衣 (30)</label>
 								</div>
 							</div>
 				   </section>
 				   		<section  class="sky-form">
-						<h4 class="cate">Brand</h4>
+						<h4 class="cate">品牌</h4>
 							<div class="row row1 scroll-pane">
 								<div class="col col-4">
-									<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Roadstar</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>公路之星</label>
 								</div>
 								<div class="col col-4">
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Levis</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Persol</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Nike</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Edwin</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>New Balance</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Paul Smith</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Ray-Ban</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>李维斯</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>匡威</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>耐克</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>阿迪达斯</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>纽巴伦</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>保罗史密斯</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>雷朋</label>
 								</div>
 							</div>
 				   </section>		
@@ -266,89 +267,6 @@
 		<div class="clearfix"> </div>
 	</div>
 	</div>
-			<!--brand-->
-		<div class="container">
-			<div class="brand">
-				<div class="col-md-3 brand-grid">
-					<img src="/static/images/ic.png" class="img-responsive" alt="">
-				</div>
-				<div class="col-md-3 brand-grid">
-					<img src="/static/images/ic1.png" class="img-responsive" alt="">
-				</div>
-				<div class="col-md-3 brand-grid">
-					<img src="/static/images/ic2.png" class="img-responsive" alt="">
-				</div>
-				<div class="col-md-3 brand-grid">
-					<img src="/static/images/ic3.png" class="img-responsive" alt="">
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			</div>
-			<!--//brand-->
-			</div>
-
-		</div>
-	<!--//content-->
-		<!--//footer-->
-	<div class="footer">
-	<div class="footer-middle">
-				<div class="container">
-					<div class="col-md-3 footer-middle-in">
-						<a href="{% url 'index' %}"><img src="/static/images/log.png" alt=""></a>
-						<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
-					</div>
-
-					<div class="col-md-3 footer-middle-in">
-						<h6>Information</h6>
-						<ul class=" in">
-							<li><a href="">About</a></li>
-							<li><a href="{% url 'contact' %}">Contact Us</a></li>
-							<li><a href="#">Returns</a></li>
-							<li><a href="{% url 'contact' %}">Site Map</a></li>
-						</ul>
-						<ul class="in in1">
-							<li><a href="#">Order History</a></li>
-							<li><a href="../ds_user/wishlist.html">Wish List</a></li>
-							<li><a href="{% url 'login' %}">Login</a></li>
-						</ul>
-						<div class="clearfix"></div>
-					</div>
-					<div class="col-md-3 footer-middle-in">
-						<h6>Tags</h6>
-						<ul class="tag-in">
-							<li><a href="#">Lorem</a></li>
-							<li><a href="#">Sed</a></li>
-							<li><a href="#">Ipsum</a></li>
-							<li><a href="#">Contrary</a></li>
-							<li><a href="#">Chunk</a></li>
-							<li><a href="#">Amet</a></li>
-							<li><a href="#">Omnis</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 footer-middle-in">
-						<h6>Newsletter</h6>
-						<span>Sign up for News Letter</span>
-							<form>
-								<input type="text" value="Enter your E-mail" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter your E-mail';}">
-								<input type="submit" value="Subscribe">
-							</form>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="footer-bottom">
-				<div class="container">
-					<ul class="footer-bottom-top">
-						<li><a href="#"><img src="/static/images/f1.png" class="img-responsive" alt=""></a></li>
-						<li><a href="#"><img src="/static/images/f2.png" class="img-responsive" alt=""></a></li>
-						<li><a href="#"><img src="/static/images/f3.png" class="img-responsive" alt=""></a></li>
-					</ul>
-					<p class="footer-class">Copyright &copy; 2016.Company name All rights reserved.</p>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-		</div>
-		<!--//footer-->
 <script src="/static/js/imagezoom.js"></script>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -364,13 +282,4 @@ $(window).load(function() {
   });
 });
 </script>
-
-	<script src="/static/js/simpleCart.min.js"> </script>
-<!-- slide -->
-<script src="/static/js/bootstrap.min.js"></script>
-
-
-</body>
-</html>
-
 {% endblock %}

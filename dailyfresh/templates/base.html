@@ -105,7 +105,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="menu-top">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>分类一</h4>
+								<h4>上装</h4>
 									<ul>
 										<li><a href="{% url "product" %}">配饰</a></li>
 										<li><a href="{% url "product" %}">包包</a></li>
@@ -117,7 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>分类二</h4>
+								<h4>下装</h4>
 								<ul>
 										<li><a href="{% url "product" %}">夹克 & 大衣</a></li>
 										<li><a href="{% url "product" %}">牛仔裤</a></li>
@@ -130,7 +130,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>分类三</h4>
+								<h4>羽绒服</h4>
 									<ul>
 										<li><a href="{% url "product" %}">衬衫</a></li>
 										<li><a href="{% url "product" %}">鞋靴 & 运动鞋</a></li>
@@ -145,7 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>分类四</h4>
+								<h4>连衣裙</h4>
 								<ul>
 									<li><a href="{% url "product" %}">T恤</a></li>
 									<li><a href="{% url "product" %}">内衣 & 袜子</a></li>
@@ -169,7 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="menu-top">
 						<div class="col1">
 							<div class="h_nav">
-								<h4>分类一</h4>
+								<h4>外套</h4>
 									<ul>
 										<li><a href="{% url "product" %}">配饰</a></li>
 										<li><a href="{% url "product" %}">包包</a></li>
@@ -181,7 +181,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>分类二</h4>
+								<h4>毛衣</h4>
 								<ul>
 										<li><a href="{% url "product" %}">夹克 & 大衣</a></li>
 										<li><a href="{% url "product" %}">牛仔裤</a></li>
@@ -194,7 +194,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>分类三</h4>
+								<h4>配饰</h4>
 
 <ul>
 										<li><a href="{% url "product" %}">衬衫</a></li>
@@ -210,7 +210,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col1">
 							<div class="h_nav">
-								<h4>分类四</h4>
+								<h4>职业套装</h4>
 								<ul>
 									<li><a href="{% url "product" %}">T恤</a></li>
 									<li><a href="{% url "product" %}">内衣 & 袜子</a></li>
@@ -230,7 +230,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</li>
 			<li><a class="color3" href="{% url "product" %}">折扣</a></li>
 			<li><a class="color4" href="{% url "about" %}">关于我们</a></li>
-            <li><a class="color5" href="typo.html">断码折扣区</a></li>
+            <li><a class="color5" href="{% url "product" %}">断码折扣区</a></li>
             <li ><a class="color6" href="{% url "contact" %}">联系我们</a></li>
         </ul>
      </div><!-- /.navbar-collapse -->
@@ -240,7 +240,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-sm-2 search-right">
 				<ul class="heart">
 				<li>
-				<a href="../others/wishlist.html" >
+				<a href="{% url "wishlist" %}" >
 				<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
 				</a></li>
 				<li><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i></a></li>
@@ -296,9 +296,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--banner-->
 <div class="banner-top">
 	<div class="container">
-		<h1>Register</h1>
+		<h1>{% block h1 %}默认标题{% endblock %}</h1>
 		<em></em>
-		<h2><a href="{% url "index" %}">主页</a><label>/</label>Register</a></h2>
+		<h2><a href="{% url "index" %}">主页</a><label>/</label>{% block h2 %}默认标题{% endblock %}</a></h2>
 	</div>
 </div>
 
@@ -331,20 +331,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer-middle">
 				<div class="container">
 					<div class="col-md-3 footer-middle-in">
-						<a href="../index.html"><img src="/static/images/log.png" alt=""></a>
-						<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
+						<a href="{% url 'index' %}"><img src="/static/images/log.png" alt=""></a>
+						<p style="font-size: 14px">Bestseller设计和销售适合都市女性、男性、儿童及青少年的流行时装和饰品，旗下拥有VERO MODA, ONLY, VILA, Object, JACK & JONES等十二个品牌，在全世界27个国家设有1600多家直营店，目前有员工12，000人分布在29个国家的35个分支机构。</p>
 					</div>
 
 					<div class="col-md-3 footer-middle-in">
 						<h6>网站信息</h6>
 						<ul class=" in">
-							<li><a href="../404.html">关于我们</a></li>
-							<li><a href="../others/contact.html">联系我们</a></li>
-							<li><a href="../others/contact.html">网站地图</a></li>
+							<li><a href="{% url "about" %}">关于我们</a></li>
+							<li><a href="{% url 'contact' %}">联系我们</a></li>
+							<li><a href="{% url 'contact' %}">网站地图</a></li>
 						</ul>
 						<ul class="in in1">
 							<li><a href="#">历史订单</a></li>
-							<li><a href="../others/wishlist.html">心愿单</a></li>
+							<li><a href="{% url "wishlist" %}">心愿单</a></li>
 							<li><a href="{% url "login" %}">登录</a></li>
 						</ul>
 						<div class="clearfix"></div>
@@ -363,10 +363,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-3 footer-middle-in">
 						<h6>订阅电子期刊</h6>
-						<span>Sign up for News Letter</span>
+						<span>注册获取最新讯息</span>
 							<form>
-								<input type="text" value="Enter your E-mail" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter your E-mail';}">
-								<input type="submit" value="Subscribe">
+								<input type="text" value="请输入您的邮箱地址" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='请输入您的邮箱地址';}">
+								<input type="submit" value="立即订阅">
 							</form>
 					</div>
 					<div class="clearfix"> </div>
@@ -379,7 +379,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="#"><img src="/static/images/f2.png" class="img-responsive" alt=""></a></li>
 						<li><a href="#"><img src="/static/images/f3.png" class="img-responsive" alt=""></a></li>
 					</ul>
-					<p class="footer-class">Copyright &copy; 2018.Company name All rights reserved.</p>
+					<p class="footer-class">版权所有 © 1996-2018，Shopin公司或其关联公司</p>
 					<div class="clearfix"> </div>
 				</div>
 			</div>
