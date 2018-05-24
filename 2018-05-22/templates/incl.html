@@ -1,0 +1,8 @@
+{% include 'index.html' %}
+
+
+{% macro show_name(name) %}
+    <h1>{{ name }}</h1>
+{% endmacro %}
+
+{{ show_name(name) }}

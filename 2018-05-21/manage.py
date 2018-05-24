@@ -1,6 +1,9 @@
-from flask import Flask, request, make_response, redirect
-app = Flask('__name?__')
+from flask import Flask, request, make_response, redirect, url_for, abort
+from flask_script import Manager
+from user import user
 
+app = Flask('__name?__')
+app.register_blueprint(user)
 @app.route('/')
 def index():
     return "hahahhh"
@@ -42,11 +45,24 @@ def response():
 
 @app.route('/old/')
 def old():
-    return redirect('/new/')
+    # return redirect('/new/')
+    return redirect(url_for('index'))
+    # return url_for('welcome', name="xiaoming", page=4, _external=True)
 
 @app.route('/new/')
 def new():
     return 'new'
 
+
+# @app.route('/abort/')
+# def err():
+#     abort(404)
+#     return 'cuo'
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return "wu"
+
+manager = Manager(app)
 if __name__ == '__main__':
-    app.run(debug=True,host="0.0.0.0", port=5000, threaded=True)
+    manager.run()
