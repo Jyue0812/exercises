@@ -1,0 +1,27 @@
+{% extends 'common/base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block title %}用户登录{% endblock %}
+
+{% block page_content %}
+    <h1>欢迎注册...</h1>
+    <div class="test"></div>
+
+
+    <div>
+        {{ wtf.quick_form(form) }}
+    </div>
+{% endblock %}
+
+
+
+{# 引入css文件 #}
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common.css') }}">
+{% endblock %}
+
+{# 加载JS文件 #}
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/common.js') }}"></script>
+{% endblock %}
