@@ -1,12 +1,11 @@
+from flask import current_app, render_template
 from flask_mail import Message
-from flask import render_template,current_app
+from extensions import mail
 from threading import Thread
-
-from manage import app
 
 def async_send_mail(msg):
     # 邮件发送需要程序上下文，新的线程没有，需要手动创建
-    with app.app_context():
+    with current_app.app_context():
         mail.send(msg)
 
 
@@ -15,7 +14,7 @@ def send_mail(subject, to, template, **kwargs):
     # 创建邮件消息对象
     msg = Message(subject,
                   recipients=[to],
-                  sender=app.config['MAIL_USERNAME'])
+                  sender=current_app.config['FLASK_MAIL_USERNAME'])
     msg.html = render_template(template, **kwargs)
     # 发送邮件
     # mail.send(msg)

@@ -24,8 +24,13 @@
                     <li><a href="#">版块三</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ url_for('user.login') }}">登录</a></li>
-                    <li><a href="{{ url_for('user.register') }}">注册</a></li>
+                    {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for('user.logout') }}">退出登录</a></li>
+                        {% else %}
+                        <li><a href="{{ url_for('user.login') }}">登录</a></li>
+                        <li><a href="{{ url_for('user.register') }}">注册</a></li>
+                        {% endif %}
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
@@ -35,7 +40,19 @@
 {# 定制内容 #}
 {% block content %}
     <div class="container">
-        {% block page_content %}默认内容{% endblock %}
+        {% block page_content %}
+
+    <div class="container">
+
+        {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+        {% endfor %}
+
+    </div>
+        {% endblock %}
     </div>
 {% endblock %}
 

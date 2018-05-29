@@ -1,5 +1,5 @@
-from .main import mains
-from .user import users
+from .mains import mains
+from .users import users
 
 DEFAULT_BLUEPRINT = (
     (mains, ''),

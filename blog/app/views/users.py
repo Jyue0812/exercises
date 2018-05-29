@@ -1,0 +1,55 @@
+from flask import Blueprint, render_template, current_app
+from app.forms import RegistrationForm, LoginForm
+from flask import get_flashed_messages, flash, redirect, request,url_for
+from app.email import send_mail
+from app.models import User
+from flask_login import login_user,login_required,logout_user,current_user
+from extensions import db
+
+
+users = Blueprint('user', __name__)
+
+@users.route('/login/', methods = ['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user is not None and user.verify_password(form.password.data):
+            login_user(user, form.remember_me.data)
+            return redirect(request.args.get('next') or url_for('mains.index'))
+        flash('用户名或密码无效')
+    return render_template('user/login.html', form=form)
+
+
+@users.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash('You have been logged out.')
+    return redirect(url_for('main.index'))
+
+
+@users.route('/register/', methods = ['GET', 'POST'])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(email=form.email.data, username=form.username.data, password=form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        token = user.generate_confirmation_token()
+        send_mail('账号激活', form.email.data, 'email/activate.html', user=user, token=token)
+        flash('点击链接激活')
+        return redirect(url_for('main.index'))
+    return render_template('user/register.html', form=form)
+
+
+@users.route('/activate/<token>')
+@login_required
+def activate(token):
+    if current_user.confirmed:
+        return redirect(url_for('main.index'))
+    if current_user.confirm(token):
+        flash('激活成功')
+    else:
+        flash('激活失败')
+        return redirect(url_for('main.index'))

@@ -7,11 +7,12 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     FLASK_MAIL_SERVER = 'smtp.qq.com'
-    # FLASK_MAIL_PORT = 25
-    # FLASK_MAIL_SENDER = 'XXXX@qq.com'
-    FLASK_MAIL_USERNAME = 'XXXX@qq.com'
-    FLASK_MAIL_PASSWORD = '123456'
-    # FLASK_MAIL_SUBJECT_PREFIX = '[flasky]'
+    FLASK_MAIL_PORT= 465
+    FLASK_MAIL_USE_SSL = True
+    FLASK_MAIL_USE_TLS = False
+    FLASK_MAIL_USERNAME = '1678033705@qq.com'
+    FLASK_MAIL_PASSWORD = 'coohdgjzpxsnebab'
+
     TEMPLATES_AUTO_RELOAD = True
 
 class DevelopConfig(Config):
