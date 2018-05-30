@@ -1,0 +1,28 @@
+{% block page_content %}
+    <div class="page-header">
+        <h1>{{ username.username }}</h1>
+        {% if username.name or username.location %}
+            <p>
+                {% if username.name %}{{ username.name }}{% endif %}
+                {% if username.location %}
+                    From <a href="http://maps.google.com/?q={{ username.location }}">
+                    {{ username.location }}
+                </a>
+                {% endif %}
+            </p>
+        {% endif %}
+{#        {% if current_user.is_administrator() %}#}
+{#            <p><a href="mailto:{{ username.email }}">{{ username.email }}</a></p>#}
+{#        {% endif %}#}
+        {% if username.about_me %}<p>{{ username.about_me }}</p>{% endif %}
+        <p>
+            Member since {{ moment(username.member_since).format('L') }}.
+            Last seen {{ moment(username.last_seen).fromNow() }}.
+        </p>
+        <div class="container">
+            <a href="{{ url_for('user.icon') }}">修改头像</a>
+            <a href="{{ url_for('user.icon') }}">修改邮箱</a>
+            <a href="{{ url_for('user.icon') }}">修改用户名</a>
+        </div>
+    </div>
+{% endblock %}

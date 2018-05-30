@@ -23,3 +23,5 @@ def config_extensions(app):
     mail.init_app(app)
     moment.init_app(app)
     login_manager.init_app(app)
+    login_manager.login_view = 'user.login'
+    login_manager.login_message = '请登录后再访问'

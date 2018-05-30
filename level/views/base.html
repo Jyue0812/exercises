@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+
+    <meta charset="UTF-8">
+    <meta name="Tsoi King Yin" content="Tsoi King Yin">
+    <link rel="stylesheet" href="/static/js/style.css" type="text/css">
+    <link rel="stylesheet" href="/static/js/style.css" type="text/css">
+    <script src="/static/js/index.js"></script>
+</head>
+
+
+<body>
+
+	<header>
+		
+		<div class="bar">
+			
+              <div class="nav-item"><a class="nav-link" href="/">Home</a></div>
+              <div class="nav-item"><a class="nav-link" href="/about">About</a></div>
+		
+		  <div class="drop">
+		    <button class="dropbutton">Profressional Recuritment
+		    	<i class="fa fa-caret-down"></i>
+		    </button>
+		
+		    <div class="drop-content">
+		      <a href="#">Mechanic/Worker/Apprentice </a>
+		      <a href="#">Editor/Translator/Lawyer </a>
+		      <a href="#">Media/Printing/Art/Design/Network</a>
+		      <a href="#">Management/IT </a>
+		      <a href="#">Resources/Administrative/Secret </a>
+		      <a href="#">PR/Entertainment/Model/Photography</a>
+		      <a href="#">Sales/Market/Business </a>
+		    </div>
+		  </div>
+			
+		  <div class="con">
+		  	<a href="#Contect">Contect</a>
+			</div>	    
+		</div>    
+	</header>
+
+      %import sqlite3
+      %import users
+      
+      %db = sqlite3.connect(dbfile)
+			%current_login_username = users.session_user(db)
+			%db.close()
+      %if current_login_username is None:
+      <form id='loginform' class="form" role="login" method='post' action='/login' name = 'loginform'>
+	    	<input type="text" name='nick' class="form-control" placeholder="Username">
+	      <input type="password" name='password' class="form-control" placeholder="Password">
+	      <input type="submit" class="btn btn-default" value='Login' >
+	    </form>
+	    %else:
+	    <p>Logged in as {{current_login_username}}</p>
+      <form id='logoutform' class="form-inline" role="logout" method='post' action='/logout'>
+      		<input type="submit" class="btn btn-default" name='logout' value='Logout' >
+      </form>
+	    %end
+
+  <div class="container">
+	  <div class="header">
+	  	<br><br>
+	  	<div class="logo">
+      	<img src="https://www.residentadvisor.net/images/labels/seekers.jpg" width="200" height="70">
+      </div>
+	  	<h1>{{title}}</h1>
+	  </div>
+  </>
+	<br>
+	<div>
+	{{!base}}
+	</div>
+
+  </body>
+  
+</html>
+
+
+
+ <!--
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>About this Site</title>
+
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+  <div class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+          </ul>
+      </div>
+      
+      %import sqlite3
+      %import users
+      
+      %db = sqlite3.connect(dbfile)
+			%current_login_username = users.session_user(db)
+			%db.close()
+      %if current_login_username is None:
+      <form id='loginform' class="form-inline" role="login" method='post' action='/login' name = 'loginform'>
+	        <div class="form-group">
+	          <input type="text" name='nick' class="form-control" placeholder="Username">
+	        </div>
+	        <div class="form-group">
+	          <input type="password" name='password' class="form-control" placeholder="Password">
+	        </div>
+	        <input type="submit" class="btn btn-default" value='Login' >
+	    </form>
+	    %else:
+	    <div class="navbar-text">Logged in as {{current_login_username}}</div>
+      <form id='logoutform' class="form-inline" role="logout" method='post' action='/logout'>
+      		<input type="submit" class="btn btn-default" name='logout' value='Logout' >
+      </form>
+	    %end
+		    
+  </div>
+
+  <div class="container">
+	  <div class="header">
+	  	<br><br>
+	  	<h1>{{title}}</h1>
+	  </div>
+  </>
+
+	<div>
+	{{!base}}
+	</div>
+
+  </body>
+  
+</html>
+-->

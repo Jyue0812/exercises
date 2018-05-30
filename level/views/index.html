@@ -1,0 +1,55 @@
+% rebase('base.html')
+
+<div class='container'>
+    <div class="row">
+
+        %import sqlite3
+        %import interface
+        %import users
+        
+        %db = sqlite3.connect(dbfile)
+				%current_login_username = users.session_user(db)
+				
+ 				%if current_login_username is not None:
+ 					<form id='postform' class="" method='post' action='/post'>
+                <ul>
+                    <li><input name="title" placeholder="Title"></li>
+                    <li><input name="company" placeholder="Company"></li>
+                    <li><input name="location" placeholder="Location"></li>
+                    <li><textarea name="description" rows="3" placeholder="Job Description"></textarea></li>
+                    <input type="submit"></li>
+                </ul>
+          </form>
+          <br>
+        %db.close()
+        %end
+          
+        %db = sqlite3.connect(dbfile)
+				%positions = interface.position_list(db)
+				
+        %for position in positions:
+        %	id = str(position[0])
+        %	timestamp = position[1]
+        %	user = position[2]
+        %	pos_title = position[3]
+        % location = position[4]
+        %	company = position[5]
+        % description = position[6]
+        % description = description[0:100]
+ 
+ 				<div class="job">
+    			<div class="jobtitle">{{pos_title}}</div>
+    			<div class="company">{{company}}</div>
+    			<div class="location">{{location}}</div>
+    			<span class="user">{{user}}</span>
+          <span class="timestamp">{{timestamp}}</span>
+    			<div class="description">{{description}}
+    			<a class="card-link" href="/positions/{{id}}">Read More</a>
+    			</div>
+				</div>
+
+        %db.close()
+        %end
+
+    </div>
+</div>

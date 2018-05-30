@@ -1,0 +1,27 @@
+% rebase('base.html')
+
+<div>
+    %import sqlite3
+    %import interface
+
+    %db = sqlite3.connect(dbfile)
+		%positions = interface.position_list(db)
+		
+    %for position in positions:
+    %	if id == str(position[0]):
+    %		timestamp = position[1]
+    %		user = position[2]
+    %		pos_title = position[3]
+    %		company = position[5]
+    %		location = position[4]
+    % 	description = position[6]
+    <h2>{{pos_title}}</h2>
+
+    <p><strong>Posted on</strong> {{timestamp}} by {{user}} ({{company}})</p>
+    <p><strong>Location:</strong> {{location}}</p>
+    <div class="position_body">
+    	{{!description}}
+    </div>
+    %db.close()
+    %end
+</div>
