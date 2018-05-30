@@ -1,157 +1,114 @@
-
 <!DOCTYPE html>
-
-<html>
-
-<head lang="en">
-
-    <meta charset="UTF-8">
-    <meta name="Tsoi King Yin" content="Tsoi King Yin">
-    <link rel="stylesheet" href="/static/js/style.css" type="text/css">
-    <link rel="stylesheet" href="/static/js/style.css" type="text/css">
-    <script src="/static/js/index.js"></script>
-</head>
-
-
-<body>
-
-	<header>
-		
-		<div class="bar">
-			
-              <div class="nav-item"><a class="nav-link" href="/">Home</a></div>
-              <div class="nav-item"><a class="nav-link" href="/about">About</a></div>
-		
-		  <div class="drop">
-		    <button class="dropbutton">Profressional Recuritment
-		    	<i class="fa fa-caret-down"></i>
-		    </button>
-		
-		    <div class="drop-content">
-		      <a href="#">Mechanic/Worker/Apprentice </a>
-		      <a href="#">Editor/Translator/Lawyer </a>
-		      <a href="#">Media/Printing/Art/Design/Network</a>
-		      <a href="#">Management/IT </a>
-		      <a href="#">Resources/Administrative/Secret </a>
-		      <a href="#">PR/Entertainment/Model/Photography</a>
-		      <a href="#">Sales/Market/Business </a>
-		    </div>
-		  </div>
-			
-		  <div class="con">
-		  	<a href="#Contect">Contect</a>
-			</div>	    
-		</div>    
-	</header>
-
-      %import sqlite3
-      %import users
-      
-      %db = sqlite3.connect(dbfile)
-			%current_login_username = users.session_user(db)
-			%db.close()
-      %if current_login_username is None:
-      <form id='loginform' class="form" role="login" method='post' action='/login' name = 'loginform'>
-	    	<input type="text" name='nick' class="form-control" placeholder="Username">
-	      <input type="password" name='password' class="form-control" placeholder="Password">
-	      <input type="submit" class="btn btn-default" value='Login' >
-	    </form>
-	    %else:
-	    <p>Logged in as {{current_login_username}}</p>
-      <form id='logoutform' class="form-inline" role="logout" method='post' action='/logout'>
-      		<input type="submit" class="btn btn-default" name='logout' value='Logout' >
-      </form>
-	    %end
-
-  <div class="container">
-	  <div class="header">
-	  	<br><br>
-	  	<div class="logo">
-      	<img src="https://www.residentadvisor.net/images/labels/seekers.jpg" width="200" height="70">
-      </div>
-	  	<h1>{{title}}</h1>
-	  </div>
-  </>
-	<br>
-	<div>
-	{{!base}}
-	</div>
-
-  </body>
-  
-</html>
-
-
-
- <!--
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="zh-CN">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title></title>
 
-    <title>About this Site</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-      <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
-      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
 
-  </head>
+<body>
 
-  <body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Seek</a>
+        </div>
+        <!--/.navbar-collapse -->
+    </div>
+</nav>
 
-  <div class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h2>Find Your Ideal Job!</h2>
+        <div class="container">
 
-      <div class="collapse navbar-collapse">
-          <ul class="navbar-nav mr-auto">
-              <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-          </ul>
-      </div>
-      
-      %import sqlite3
-      %import users
-      
-      %db = sqlite3.connect(dbfile)
-			%current_login_username = users.session_user(db)
-			%db.close()
-      %if current_login_username is None:
-      <form id='loginform' class="form-inline" role="login" method='post' action='/login' name = 'loginform'>
-	        <div class="form-group">
-	          <input type="text" name='nick' class="form-control" placeholder="Username">
-	        </div>
-	        <div class="form-group">
-	          <input type="password" name='password' class="form-control" placeholder="Password">
-	        </div>
-	        <input type="submit" class="btn btn-default" value='Login' >
-	    </form>
-	    %else:
-	    <div class="navbar-text">Logged in as {{current_login_username}}</div>
-      <form id='logoutform' class="form-inline" role="logout" method='post' action='/logout'>
-      		<input type="submit" class="btn btn-default" name='logout' value='Logout' >
-      </form>
-	    %end
-		    
-  </div>
+            <form action="" class="form-inline">
+                <div class="form-group">
+                    <input type="text" placeholder="keywords" id="keywd" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">SEEK</button>
+            </form>
+        </div>
 
-  <div class="container">
-	  <div class="header">
-	  	<br><br>
-	  	<h1>{{title}}</h1>
-	  </div>
-  </>
 
-	<div>
-	{{!base}}
-	</div>
+    </div>
+</div>
 
-  </body>
-  
+<div class="container bgc">
+
+    <div class="col-md-7">
+        <div class="list-group" id="popup">
+            <a href="#" class="list-group-item info0"></a>
+            <a href="#" class="list-group-item info1"></a>
+            <a href="#" class="list-group-item info2"></a>
+            <a href="#" class="list-group-item info3"></a>
+            <a href="#" class="list-group-item info9"></a>
+            <a href="#" class="list-group-item info4"></a>
+            <a href="#" class="list-group-item info5"></a>
+            <a href="#" class="list-group-item info8"></a>
+            <a href="#" class="list-group-item info6"></a>
+            <a href="#" class="list-group-item info7"></a>
+        </div>
+
+
+        <div class="container" id="box">
+                <div class="head">
+                    <p>
+                      <button type="button" class="btn btn-primary btn-lg">Apply for This Job</button>
+                    </p>
+                </div>
+                <div class="foot">
+                    <p>dadioan</p>
+                    <p>dadioan</p>
+                    <p>dadioan</p>
+                    <p>dadioan</p>
+                    <p>dadioan</p>
+                    <p>dadioan</p>
+                    <p>dadioan</p>
+                    <p>dadioan</p>
+                </div>
+                <button id="boxclose" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+    </div>
+    </div><!-- /.c
+    <footer>
+        <p>&copy; 2016 Company, Inc.</p>
+    </footer>
+</div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="/static/js/script.js"></script>
+        <script src="/static/js/handlebars.js"></script>
+        <script id="entry-template" type="text/x-handlebars-template" src="/static/js/handlebars.js"></script>
+    </body>
 </html>
--->

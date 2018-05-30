@@ -1,87 +1,124 @@
-__author__ = 'Steve Cassidy'
-
-from bottle import Bottle, template, request, static_file, redirect
-import interface
-import users
-import bottle_sqlite
-
+from bottle import Bottle, debug, static_file, template, request, response
+import uuid
+import json
 
 app = Bottle()
+debug(True)
+
+
+COOKIE_NAME = 'sessionid'
+POSITIONS = None
+## SESSIONS is a dictionary containing session info for
+## each user session
+## it will use sessionid as a key and store a dictionary per user
+SESSIONS = {}
+
+
+def get_sessionid():
+    """Get the current sessionid from a request cookie
+    or set one if not already present"""
+
+    sessionid = request.get_cookie(COOKIE_NAME)
+    if not sessionid:
+        sessionid = uuid.uuid4().hex
+        response.set_cookie(COOKIE_NAME, sessionid)
+
+    return sessionid
+
+
+def get_session_info(sessionid):
+    """Get the session data stored for this sessionid"""
+
+    global SESSIONS
+
+    if not sessionid in SESSIONS:
+        SESSIONS[sessionid] = {'applications': []}
+    return SESSIONS[sessionid]
 
 
 @app.route('/')
-def index(db):
-    """show the home page"""
-    return template('index', title='Welcome to Jobs', dbfile = app.plugins[2].dbfile)
+def index():
+    """Deliver the index page. Really just a
+    static file but for convenience we do this through
+    the template"""
+
+    # ensure there is a session id
+    sessionid = get_sessionid()
+
+    return template('index')
 
 
-@app.route('/about')
-def about():
-    """generate the about page"""
-    return template('about', title="About", dbfile = app.plugins[2].dbfile)
+def read_positions():
+    """Load the positions data from the JSON
+    file, make sure we do this only once"""
+
+    global POSITIONS
+
+    if not POSITIONS:
+        with open("positions.json") as fd:
+            POSITIONS = json.load(fd)
+
+    return POSITIONS
 
 
-@app.route('/positions/<id>')
-def description(db, id):
-    """show the selected position's detailed information"""
-    return template('position_detail', title="Position Detail", dbfile = app.plugins[2].dbfile, id=id)
+@app.route('/positions')
+def positions():
+
+    d = read_positions()
+    response.content_type = 'application/json'
+    return json.dumps(d)
 
 
-@app.post('/login')
-def login(db):
-    """user login"""
+@app.post('/apply')
+def post_apply():
+    """Handle job application POST request
 
-    # obtain the username and password from forms
-    nick = request.forms.get('nick')
-    password = request.forms.get('password')
+    /apply - accepts a POST request for a user to apply for a job, form fields:
+        * position_id - id of the position you are applying for
+        * first_name - applicant first name
+        * last_name - applicant last name
+        * years_experience - applicant years of work experience
+        * expertise - sentence describing expertise of applicant
+    """
 
-    # login
-    if users.check_login(db, nick, password):
-        users.generate_session(db, nick)
-        return redirect('/', 303)
-    else:
-        return template('login_failed', title="Login Error", dbfile = app.plugins[2].dbfile)
+    sessionid = get_sessionid()
+    info = get_session_info(sessionid)
 
-@app.post('/logout')
-def logout(db):
-    """user logout"""
-    user_nick = users.session_user(db)
-    users.delete_session(db, user_nick)
-    return redirect('/', 303)
+    # get form data
 
+    application = {
+        'position_id': request.forms.get('position_id'),
+        'first_name': request.forms.get('first_name'),
+        'last_name': request.forms.get('last_name'),
+        'years_experience': request.forms.get('years_experience'),
+        'expertise': request.forms.get('expertise'),
+    }
+    # add a new application to the list
+    info['applications'].append(application)
 
-@app.post('/post')
-def post(db):
-    """post a new work position information"""
-    user_name = users.session_user(db)
+    return {
+            'count': len(info['applications']),
+            # this message is supposed to be custom to the position but for
+            # now just use a standard string
+            'message': "Thanks for your application, we'll get back to you shortly"
+    }
 
-    # only the login user can post new position
-    if user_name is not None:
-        interface.position_add(db, user_name, request.forms.get('title'), request.forms.get('location'), request.forms.get('company'), request.forms.get('description') )
-        return redirect('/', 302)
-    else:
-        return "Please login firstly."
-#
-# @app.route('/static/<filename>')
-# def server_static(filename):
-#     return static_file(filename, root='/static')
+@app.route('/applications')
+def applications():
+    """Return a JSON list of applications for the current user"""
 
-@app.route('/static/js/<filename>')
-def server_static(filename):
-    return static_file(filename, root='./static/js')
+    sessionid = get_sessionid()
+    info = get_session_info(sessionid)
 
-@app.route('/static/css/<filename>')
-def server_static(filename):
-    return static_file(filename, root='./static/css')
+    return info
 
+@app.route('/static/<filepath:path>')
+def static(filepath):
 
-
+    return static_file(filepath, root='static')
 
 
-if __name__ == '__main__':
+if __name__=='__main__':
 
-    from bottle.ext import sqlite
-    from database import DATABASE_NAME
-    # install the database plugin
-    app.install(sqlite.Plugin(dbfile=DATABASE_NAME))
-    app.run(debug=True, port=8010)
+    app.run(reloader=True)
+

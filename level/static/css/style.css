@@ -1,0 +1,47 @@
+body {
+    background-color: pink!important;
+    font-family: sans-serif;
+    }
+
+#content {
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+#keywd {
+    height: 45px;
+    width: 500px;
+}
+#box {
+    width:600px;
+    position: fixed;
+    z-index:900;
+    right:100px;
+    top:200px;
+    background-color: #f5f5f5;
+}
+#box .head {
+    width:100%;
+    height: 150px;
+    box-shadow: 0 5px 6px -6px #000;
+}
+#boxclose {
+    position: fixed;
+    z-index:900;
+    right:130px;
+    top:20px;
+}
+.jumbotron {
+    position:fixed;
+    width: 100%;
+    left:0;
+    z-index: 500;
+    margin: 0 auto;
+    height: 180px;
+}
+.list-group {
+    margin-top:200px;
+}
