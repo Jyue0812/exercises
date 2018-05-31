@@ -1,0 +1,38 @@
+遍历
+{{#each this}}
+{{/each}}
+
+注释
+{{!--
+--}}
+
+{{with book}}
+    嵌套遍历
+    {{#each this}}
+        <li>{{this}}</li>
+    {{/each}}
+{{/with}}
+
+判断数据
+{{#if birth}}
+{{/if}}
+
+增加序号
+{{@index}}
+
+拿到上层序号
+{{@../index}}
+
+序号从1开始不从0
+{{addone @../index}}
+Handlebars.registerHelper("addone", function(value){
+    return value + 1
+})
+
+选第一个
+{{#isfirst @index}}
+{{/isfirst}}
+Handlebars.registerHelper("isfirst", function(value, options){
+    if(value ==0){
+    return options.fn(this);}
+})
