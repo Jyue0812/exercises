@@ -1,4 +1,4 @@
-from bottle import Bottle, debug, static_file, template, request, response
+from bottle import Bottle, debug, static_file, template, request, response, jinja2_template, jinja2_view
 import uuid
 import json
 
@@ -44,7 +44,6 @@ def index():
 
     # ensure there is a session id
     sessionid = get_sessionid()
-
     return template('index')
 
 
@@ -57,7 +56,6 @@ def read_positions():
     if not POSITIONS:
         with open("positions.json") as fd:
             POSITIONS = json.load(fd)
-
     return POSITIONS
 
 
@@ -118,5 +116,5 @@ def static(filepath):
 
 if __name__=='__main__':
 
-    app.run(reloader=True)
+    app.run(port=5431,reloader=True)
 

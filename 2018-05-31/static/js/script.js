@@ -1,15 +1,10 @@
 (function () {
     $("#positionBox").hide();
-    $("#popup").click(function () {
-        $("#positionBox").show()
-    });
+
     $("#boxclose").click(function () {
         $("#positionBox").hide()
     });
 
-    function getDateTimeStamp(dateStr) {
-        return Date.parse(dateStr.replace(/-/gi, "/"));
-    }
 
     $.ajaxSetup({
         error: function () {
@@ -17,62 +12,47 @@
             return false;
         }
     });
-    //
-    // $.getJSON('../positions.json', function (data) {
-    //     console.log(data);
-    //     var t = $('#positionLists').html();
-    //     var f = Handlebars.compile(t);
-    //     var h = f(data);
-    //     $('#popup').html(h);
-    //
-    //     var detail = $('#positionDetails').html();
-    //     var jd = Handlebars.compile(detail);
-    //     var jdb = jd(data);
-    //     $('#positionDetail').html(jdb);
-    // });
+
 
     $.ajax({
         type: 'get',
         url: '../positions.json',
         async: true,
         success: function (data) {
+            var dat = data.slice(0,10)
             var t = $('#positionLists').html();
             var f = Handlebars.compile(t);
-            var h = f(data);
-            console.log(data);
+            var h = f(dat);
             $('#popup').html(h);
 
-            var detail = $('#positionDetails').html();
-            var jd = Handlebars.compile(detail);
-            var jdb = jd(data);
-            $('#positionDetail').html(jdb);
 
-            var head = $('#heads').html();
-            var hea = Handlebars.compile(head);
-            var he = hea(data);
-            $('#head').html(he);
 
-            for (i = 0; i < 10; i++) {
-                // var timestamp = Date.parse(new Date(date));
-                // var timestamp_now = Date.parse(new Date());
-                var time_list = new Array();
-                // a = timestamp_now-timestamp;
-                var time_num = getDateTimeStamp(data[i].created_at);
-                if (getDateTimeStamp(data[i].created_at) > getDateTimeStamp(data[i + 1].created_at)) {
-                    time_list.push(i)
+
+            //click popnewwindow
+            $(".list-group-item").click(function () {
+                for (i=0; i<10; i++){
+                    if ($(this).index() == i){
+                    var head = $('#heads').html();
+                    var hea = Handlebars.compile(head);
+                    var he = hea(dat[i]);
+                    $('#head').html(he);
+                    var detail = $('#positionDetails').html();
+                    var jdb = Handlebars.compile(detail);
+                    var jd = jdb(dat[i]);
+                    $('#positionDetail').html(jd);
+                    }
                 }
-                else (time_list.push(i + 1));
-                // console.log(time_list.sort());
-                console.log(time_list, "=>", i)
-            }
+                $("#positionBox").show()
+            });
+
 
 
             //search
             var titles = new Array();
-            var tt = titles.push(data[0].title);
+            var tt = titles.push(dat[i]);
             $("input[type=text]").change(function () {
-                var searchText = $(this).val();//获取输入的搜索内容
-                var $searchLi = "";//预备对象，用于存储匹配出的li
+                var searchText = $(this).val();
+                var $searchLi = "";
                 if (searchText != "") {
                     var arr = new Array();
                     arr = searchText.split(" ");
@@ -87,10 +67,12 @@
                     }
                     $("#search").html("");
                 }
-                //判断搜索内容是否有效，若无效，输出not find
                 if ($searchLi.length <= 0 || arr.length <= 0) {
                     $(".bgc >div >div").html("<h3 style='color:white'>Sorry, no matching jobs were found in Our Position List.</h3><h3 style='color:white'>Would you like to try another keyword please?</h3>")
+                } else{
+                    $("div:contains('simple')").css("border", "4px solid blue");
                 }
+
             });
             $("input[type=submit]").click(function () {
                 $("searchText").change();

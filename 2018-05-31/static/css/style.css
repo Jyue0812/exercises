@@ -17,7 +17,7 @@ body {
 }
 #positionBox {
     width:600px;
-    height: 450px;
+    height: 580px;
     position: fixed;
     z-index:900;
     right:40px;
@@ -47,7 +47,7 @@ body {
 #positionDetail {
     overflow:auto;
     width: 500px;
-    height: 180px;
+    height: 280px;
     overflow-y: scroll;
     overflow-x:hidden;
 }
