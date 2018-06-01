@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jobs!</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Seek</a>
+        </div>
+        <!--/.navbar-collapse -->
+    </div>
+</nav>
+
+
+<div class="jumbotron">
+    <div class="container">
+        <h3>Find Your Ideal Job!</h3>
+        <div class="container">
+
+            <form action="" class="form-inline">
+                <div class="form-group">
+                    <input type="text" placeholder="keywords" id="keywd" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">SEEK</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container bgc">
+    <div class="col-md-6">
+        <div class="list-group" id="popup">
+        </div>
+        <div class="container" id="positionBox">
+            <div class="head" id="head"></div>
+            <div class="foot">
+                <form action="/apply" method="post" id="sub">
+                    <div class="form-group fl col-md-4">
+                        <input class="form-control" name="first_name" placeholder="first name" required>
+                        <input class="form-control" name="last_name" placeholder="last name" required>
+                    </div>
+                    <div class="form-group fl col-md-4">
+                        <input class="form-control" name="position_id" placeholder="position id" required>
+                        <input class="form-control" name="years_experience" placeholder="years experience" required>
+                    </div>
+                    <div class="form-group fl col-md-4">
+                        <input class="form-control" name="expertise" placeholder="expertise" required>
+                        <button id="applyBtn" type="submit" class="btn btn-primary btn-lg">Apply for Job NOW</button>
+                    </div>
+                </form>
+                <hr align=center width=500 color=#999 SIZE=4>
+                <div class="container">
+                    <div id="positionDetail">
+                        <dl id="detail">
+
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <button id="boxclose" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="pag" id="pag">
+    <ul>
+        <li class="cur">1</li>
+        <li class="cur">2</li>
+        <li class="cur">3</li>
+        <li class="clickable">4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</div>
+<!-- load javascript libraries -->
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="/static/js/handlebars.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<!-- load project javascript -->
+<!-- note that you can add more modules if you wish -->
+<script src="/static/js/script.js"></script>
+</body>
+</html>
