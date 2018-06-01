@@ -14,20 +14,34 @@
         }
     });
 
-    //ajax post applicaition form
+    $('#sub').one("submit", function () {
+        var a = $('#sub').attr('action');
+        console.log(a);
+        if (a === '/apply') {
+            $.ajax({
+                type: 'post',
+                url: '/apply',
+                async: true,
+                success: function (data) {
+                    window.location.href = '/applysuccess';
+                }
+            })
+        } else {
+            // 阻止表单的默认行为
+            return false;
+        }
+    });
+
+
     $.ajax({
         type: 'post',
         url: '/apply',
         async: true,
-        dataType: 'json',
-        data: $('#sub').serialize(),
         success: function (data) {
-
-            $("#sub").attr("method", 'GET').attr("action", '/applysuccess');
-            $('#apply').html('<h3>' + data.message + '</h3>');
-            $('.count').html(' ' + data.count + ' ');
+            $('#apply').html('<h3>' + data.message + '</h3><a href="/">Back to Homepage</a>');
         }
     });
+
 
     //get application info
     $.ajax({
@@ -37,15 +51,17 @@
         success: function (data) {
             var le = data.applications.length;
             var dat = data.applications;
-
             console.log(dat);
-            for (i = 0; i< le; i++ ) {
-                $('table').append('<tr><td>'
-                    + dat[i].position_id + '</td><td>'
-                    + dat[i].first_name + '</td><td>'
-                    + dat[i].last_name + '</td><td>'
-                    + dat[i].years_experience + '</td><td>'
-                    + dat[i].expertise + '</td></tr>');
+            console.log(dat);
+            for (i = 0; i < le; i++) {
+                if (dat[i].position_id && dat[i].first_name && dat[i].last_name && dat[i].years_experience && dat[i].expertise) {
+                    $('table').append('<tr><td>'
+                        + dat[i].position_id + '</td><td>'
+                        + dat[i].first_name + '</td><td>'
+                        + dat[i].last_name + '</td><td>'
+                        + dat[i].years_experience + '</td><td>'
+                        + dat[i].expertise + '</td></tr>');
+                }
             }
         }
     });
