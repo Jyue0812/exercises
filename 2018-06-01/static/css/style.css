@@ -2,7 +2,9 @@ body {
     background-color: #5bc0de !important;
     font-family: sans-serif;
 }
-
+#nav {
+    background-color: #333;
+}
 #content {
     background-color: white;
     text-align: center;
@@ -43,7 +45,7 @@ body {
 
 .pTitle {
     margin-top: 22px;
-    width: 280px;
+    width: 380px;
     height: 50px;
     /*line-height: 30px;*/
     margin-left: 20px;
@@ -141,4 +143,8 @@ body {
 
 .tableC tr:first-of-type {
     font-weight: 700;
+}
+
+#loadMore {
+    margin-left: 30px;
 }

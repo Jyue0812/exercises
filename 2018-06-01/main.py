@@ -71,6 +71,7 @@ def positions():
 def applysuccess():
     return template('apply')
 
+
 @app.post('/apply')
 def post_apply():
     """Handle job application POST request
@@ -99,11 +100,12 @@ def post_apply():
     info['applications'].append(application)
 
     return {
-            'count': len(info['applications']),
-            # this message is supposed to be custom to the position but for
-            # now just use a standard string
-            'message': "Thanks for your application, we'll get back to you shortly"
+        'count': len(info['applications']),
+        # this message is supposed to be custom to the position but for
+        # now just use a standard string
+        'message': "Thanks for your application, we'll get back to you shortly"
     }
+
 
 @app.route('/applications')
 def applications():
@@ -116,11 +118,8 @@ def applications():
 
 @app.route('/static/<filepath:path>')
 def static(filepath):
-
     return static_file(filepath, root='static')
 
 
-if __name__=='__main__':
-
+if __name__ == '__main__':
     app.run()
-
