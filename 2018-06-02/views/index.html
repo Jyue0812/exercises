@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/js/script.js"></script>
+
+</head>
+<body>
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">AwesomeJob</a>
+        </div>
+        <div id="navbar-collapse" class="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Pages</a></li>
+                <li><a href="/">Contact</a></li>
+                <li><a href="/">Log in</a></li>
+                <li><a href="/">Sign up</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluids">
+    <div  class="one">
+        <input type="text" placeholder="Enter Job Title to Start">
+        <button type="submit">Search</button>
+    </div>
+</div>
+<div class="container jp">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>The Latest Job Listing</h2>
+        </div>
+    </div>
+    <!-- END row -->
+    <!-- END row -->
+
+</div>
+<div class="container">
+    <div class="col-md-12 text-center">
+        <button class="btn btn-primary btn-lg viewall" id="viewall">View all our positions</button>
+    </div>
+</div>
+
+<div class="footer">
+	<div class="footer-middle">
+				<div class="container">
+					<div class="col-md-3 footer-middle-in">
+						<h6>Information</h6>
+						<ul class=" in">
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Contact</a></li>
+							<li><a href="#">Sitemap</a></li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-md-3 footer-middle-in">
+						<h6>Subscription</h6>
+						<span>Sign Up for the Latest News</span>
+							<form>
+								<input type="text" value="Enter email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter email';}">
+								<input type="submit" value="Subscribe">
+							</form>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="container">
+					<p class="footer-class">Copyright © 1996-2018, AwesomeJob Company</p>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+</div>
+
+</body>
+</html>

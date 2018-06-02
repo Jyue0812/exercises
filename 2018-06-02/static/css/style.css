@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 800px;
+}
+
+.one {
+    margin: 0 auto;
+    width: 100%;
+    height: 370px;
+    background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1528556716&di=642621d81647c70e1cc2a2d79fc02381&imgtype=jpg&src=http%3A%2F%2Fimg6.bdstatic.com%2Fimg%2Fimage%2Fpublic%2Fhanteng2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-top: 30px;
+    position: relative;
+}
+
+.one input {
+    padding-left: 30px;
+    width: 420px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -364px;
+}
+
+.one button {
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    background-color: #c7254e;
+    border: 0;
+    color: #ffffff;
+    top: 50%;
+    left: 57%;
+    margin-top: -25px;
+    margin-left: -60px;
+}
+
+.container-fluids {
+    margin-bottom: 20px;
+    padding: 0;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #f9f2f4;
+}
+
+#viewall {
+    color: #fff;
+    background-color: #c7254e;
+    border-color: #c7254e;
+    margin-top: 50px;
+}
+
+.jobPanel {
+    border: 1px solid #c7254e;
+    position: relative;
+    height: 425px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.jobPanel:hover {
+    border: 1px solid #c7254e;
+    box-shadow: 3px 5px 3px #999999;
+    position: relative;
+    height: 425px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.companyweb {
+    margin-top: 10px;
+    width: 200px;
+    height: 50px;
+    font-weight: 700;
+    background-color: #c7254e;
+    text-align: center;
+    color: #fff;
+    line-height: 50px;
+    font-size: 18px;
+    position: absolute;
+    bottom: 20px;
+    left: 90px;
+    border: 2px solid #c7254e;
+}
+
+.companyweb a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.companyweb a:hover, a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+.companyweb:hover {
+    margin-top: 10px;
+    width: 200px;
+    height: 50px;
+    font-weight: 700;
+    background-color: #fff;
+    text-align: center;
+    color: #c7254e;
+    border: 2px solid #c7254e;
+    line-height: 50px;
+    font-size: 18px;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+}
+
+.companyweb:hover a{
+    text-decoration: none;
+    color: #c7254e;
+
+}
+
+.ellipsis {
+    margin-right: 0;
+    display: block;
+    width: 320px;
+    height: 58px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.footer {
+    margin-top: 40px;
+    width: 100%;
+    height: 300px;
+    background-color: #e7e7e7;
+}
+
+.footer-middle {
+    background: #1F1F1F;
+    padding: 4em 0;
+}
+
+.footer-middle-in h6 {
+    font-size: 1.4em;
+    color: #fff;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+
+.footer-middle-in span {
+    font-size: 0.9em;
+    color: #B3B3B3;
+    line-height: 1.8em;
+}
+
+ul.in li {
+    list-style: none;
+}
+
+ul.in li a {
+    color: #B3B3B3;
+    font-size: 0.9em;
+    text-decoration: none;
+    padding: 0 0 0.5em;
+    display: block;
+}
+
+ul.in li a:hover {
+    color: #F67777;
+}
+
+.footer-middle-in input[type="text"] {
+    width: 100%;
+    padding: 0.5em 1em;
+    margin: 0.7em 0;
+    background: none;
+    outline: none;
+    border: 1px solid #B3B3B3;
+    -webkit-appearance: none;
+    font-size: 0.9em;
+    color: #B3B3B3;
+}
+
+.footer-middle-in input[type="submit"] {
+    width: 100%;
+    font-size: 1em;
+    background: #c7254e;
+    padding: 0.5em 1em;
+    text-align: center;
+    color: #fff;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+.footer-bottom {
+    background: #000;
+    padding: 1em 0;
+}
+
+.footer-class {
+    color: #fff;
+    font-size: 1em;
+    float: right;
+}
+
