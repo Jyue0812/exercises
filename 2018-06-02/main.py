@@ -95,12 +95,13 @@ def post_apply():
     # add a new application to the list
     info['applications'].append(application)
 
-    return {
-            'count': len(info['applications']),
-            # this message is supposed to be custom to the position but for
-            # now just use a standard string
-            'message': "Thanks for your application, we'll get back to you shortly"
-    }
+    # return {
+    #         'count': len(info['applications']),
+    #         # this message is supposed to be custom to the position but for
+    #         # now just use a standard string
+    #         'message': "Thanks for your application, we'll get back to you shortly"
+    # }
+    return template('applyed')
 
 @app.route('/applications')
 def applications():
