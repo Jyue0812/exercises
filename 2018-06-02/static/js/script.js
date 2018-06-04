@@ -1,21 +1,21 @@
 (function () {
     $.getJSON('/positions', function (data) {
-            //search
-
-            $("#sub").click(function () {
-                var txt = $("#search").val();
-                if (txt != "") {
-                    for (i = $('.jp').children().length-2; i >=0; i--) {
-                        var ad = data[i].title;
-                        if (ad.indexOf(txt) === -1){
-                                $('.jp').children('div')[i+1].remove()
-                            }
-                        if ($('.jp').children().length === 1){
-                            $('.jp').html("<h3 class='notfound'>Not Found, please enter the job title and try again!</h3>")
-                        }
+        //search
+        $("#sub").click(function () {
+            var txt = $("#search").val();
+            if (txt != "") {
+                for (i = $('.jp').children().length - 2; i >= 0; i--) {
+                    var ad = data[i].title;
+                    if (ad.indexOf(txt) === -1) {
+                        $('.jp').children('div')[i + 1].remove()
                     }
-                } $("#search").val("").focus();
-            });
+                    if ($('.jp').children().length === 1) {
+                        $('.jp').html("<h3 class='notfound'>Not Found, please enter the job title and try again!</h3>")
+                    }
+                }
+            }
+            $("#search").val("").focus();
+        });
 
         //covert time to a different way
         function displayTime(data) {
@@ -166,12 +166,6 @@
 
     //get data from /applications
     $.getJSON('/applications', function (data) {
-        // console.log(data)
-    });
-
-    //get data from /applications
-    $.getJSON('/applications', function (data) {
-
         var a = data.applications;
         var b = a.length;
         if (b > 9) {
