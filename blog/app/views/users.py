@@ -4,6 +4,7 @@ from app.email import send_mail
 from app.models import User
 from flask_login import login_user,login_required,logout_user,current_user
 from extensions import db
+from app.models import Post
 
 
 users = Blueprint('user', __name__)
@@ -60,7 +61,8 @@ def profile(username):
     username = User.query.filter_by(username=username).first()
     if username is None:
         abort(404)
-    return render_template('user/profile.html', username=username)
+    posts = username.posts.order_by(Post.timestamp.desc()).all()
+    return render_template('user/profile.html', username=username, posts=posts)
 
 #修改头像
 @login_required

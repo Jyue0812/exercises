@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
-from wtforms.validators import Length, EqualTo, Email
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
+from wtforms.validators import Length, EqualTo, Email, DataRequired
 
 
 class RegistrationForm(FlaskForm):
@@ -16,3 +16,15 @@ class LoginForm(FlaskForm):
     password = PasswordField('密码', validators=[Length(3, 10, '密码必须在6到10个字符之间')])
     remember_me = BooleanField('保持登录')
     submit = SubmitField('登录')
+
+
+class EditProfileForm(FlaskForm):
+    name = StringField('Real name', validators=[Length(0, 64)])
+    location = StringField('Location', validators=[Length(0, 64)])
+    about_me = TextAreaField('About me')
+    submit = SubmitField('Submit')
+
+
+class PostForm(FlaskForm):
+    body = TextAreaField("What's on your mind?", validators=[DataRequired()])
+    submit = SubmitField('Submit')
