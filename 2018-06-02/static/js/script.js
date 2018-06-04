@@ -1,5 +1,22 @@
 (function () {
     $.getJSON('/positions', function (data) {
+            //search
+
+            $("#sub").click(function () {
+                var txt = $("#search").val();
+                if (txt != "") {
+                    for (i = $('.jp').children().length-2; i >=0; i--) {
+                        var ad = data[i].title;
+                        if (ad.indexOf(txt) === -1){
+                                $('.jp').children('div')[i+1].remove()
+                            }
+                        if ($('.jp').children().length === 1){
+                            $('.jp').html("<h3 class='notfound'>Not Found, please enter the job title and try again!</h3>")
+                        }
+                    }
+                } $("#search").val("").focus();
+            });
+
         //covert time to a different way
         function displayTime(data) {
             var str = data;
@@ -48,8 +65,8 @@
 
         //loop json data
         function jobDetails(i, j) {
-            for (i = 0; i < j; i++) {
-                $('.jp').append('<div class="col-md-4 jobPanel"><div class="text"><h3>'
+            for (i = i; i < j; i++) {
+                $('.jp').append('<div class="col-md-4 jobPanel"><div class="text" id="title"><h3>'
                     + data[i].title + '</h3><span>Posted '
                     + displayTime(data[i].created_at) + '</span><h4>Company Name</h4><span>'
                     + data[i].company + '</span><h4>Location</h4><span>'
@@ -65,7 +82,37 @@
         //view all the positions button
         $('.viewall').one('click', function () {
             jobDetails(12, data.length);
-            $('.viewall').remove()
+            $('.viewall').remove();
+            $('.notfound').remove()
+        });
+
+
+        $('#amonth').click(function () {
+            $('.jp').html('<div class="row">\n' +
+                '        <div class="col-md-6">\n' +
+                '            <h2>The Latest Job Listing</h2>\n' +
+                '        </div>\n' +
+                '        <ul class="col-md-2">\n' +
+                '            <li><a id="all">All</a></li>\n' +
+                '            <li><a id="amonth">Within a month</a></li>\n' +
+                '        </ul>\n' +
+                '    </div>');
+            $('#amonth').css("font-weight", "bold");
+            $('#all').css("font-weight", "normal");
+            jobDetails(0, 1);
+
+            $('#all').click(function () {
+                //call funcation
+                jobDetails(1, 12);
+
+                //view all the positions button
+                $('.viewall').one('click', function () {
+                    jobDetails(12, data.length);
+                    $('.viewall').remove()
+                });
+                $('#all').css("font-weight", "bold");
+                $('#amonth').css("font-weight", "normal");
+            });
         });
         $('#close').hide();
         $('.job-detail').hide();
@@ -127,22 +174,22 @@
 
         var a = data.applications;
         var b = a.length;
-        if (b > 9){
+        if (b > 9) {
             b = 9;
-            a = a.slice(-10,-1)
+            a = a.slice(-10, -1)
         }
-        for (i=0;i<b;i++){
+        for (i = 0; i < b; i++) {
             $('#applications').append('<li>Position Id: '
-                +a[i].position_id +' First Name:'
-                +a[i].first_name+'Last Name:'
-                +a[i].last_name+'Years of Experience:'
-                +a[i].years_experience +' Expertise:'
-                +a[i].expertise+'</li>')
-            }
+                + a[i].position_id + ' First Name:'
+                + a[i].first_name + 'Last Name:'
+                + a[i].last_name + 'Years of Experience:'
+                + a[i].years_experience + ' Expertise:'
+                + a[i].expertise + '</li>')
+        }
         $('#closeMask').click(function () {
             $('#closeMask').hide();
             $('.mask').hide();
-            window.location.href='/'
+            window.location.href = '/'
         });
     });
 

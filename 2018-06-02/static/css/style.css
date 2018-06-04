@@ -17,7 +17,7 @@ body {
     background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1528556716&di=642621d81647c70e1cc2a2d79fc02381&imgtype=jpg&src=http%3A%2F%2Fimg6.bdstatic.com%2Fimg%2Fimage%2Fpublic%2Fhanteng2.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     margin-top: 30px;
     position: relative;
 }
@@ -33,7 +33,7 @@ body {
     margin-left: -364px;
 }
 
-.one button {
+.one .button {
     text-align: center;
     width: 200px;
     height: 50px;
@@ -157,7 +157,7 @@ ul li {
     position: fixed;
     z-index: 1000;
     right: -600px;
-    top: 490px;
+    top: 100px;
     width: 600px;
     height: 600px;
     overflow-y:scroll;
@@ -174,14 +174,14 @@ ul li {
 }
 
 .mask {
-    width: 800px;
-    height: 800px;
+    width: 100%;
+    height: 100%;
     background-color: #000;
     opacity: .6;
     position: fixed;
     z-index: 5000;
-    top: 200px;
-    left: 500px;
+    top: 0;
+    left: 0;
 }
 
 .mask h1, .mask h3 {
@@ -207,36 +207,41 @@ ul li {
     height: 20px;
     position: fixed;
     right: 0;
-    top: 492px;
+    top: 100px;
     z-index: 2222;
     background-color: #000;
 }
 
 #closeMask {
+    text-align: center;
     float: right;
-    color: #c7254e;
+    color: red;
+    line-height: 30px;
     width: 45px;
-    font-size: 12px;
-    height: 20px;
-    position: fixed;
-    right: 867px;
-    top: 200px;
+    font-size: 16px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
     z-index: 5001;
     opacity: .8;
     background-color: #eeeeee;
 }
 
+.jp .row ul {
+    margin-top: 20px;
+}
 
-
-.job-filter {
-    position: fixed;
-    z-index: 100;
-    right: 375px;
-    top: 490px;
-    width: 360px;
-    height: 300px;
-    background-color: #ffffff;
-    border: 3px solid #eee;
+.jp .row ul li a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+.jp .row ul li:first-of-type {
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
 }
 
 .footer {
