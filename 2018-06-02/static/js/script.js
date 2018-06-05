@@ -121,11 +121,11 @@
         $('.jp').on("mouseenter", $('.jobPanel'), function () {
             $('.jobPanel').click(function () {
                 for (i = 0; i < data.length; i++) {
-                    if ($(this).index() == i) {
+                    if ($(this).find('.text h3').text() === data[i].title) {
                         $('.job-detail').show().animate({right: '0'}).html('<div class="text"><h3 class="bolda">'
-                            + data[i - 1].title + '</h3><p><span class="bolda">Id:&nbsp</span>'
-                            + data[i - 1].id + '</p><p>Posted '
-                            + displayTime(data[i - 1].created_at) + '</p><button class="job-apply" type="submit">Fill the Job Application Form</button><div class="fillForm">' +
+                            + data[i].title + '</h3><p><span class="bolda">Id:&nbsp</span>'
+                            + data[i].id + '</p><p>Posted '
+                            + displayTime(data[i].created_at) + '</p><button class="job-apply" type="submit">Fill the Job Application Form</button><div class="fillForm">' +
                             '<form class="form-group" action="/apply" method="post">' +
                             '<input class="form-control" name="first_name" placeholder="first name">\n' +
                             '        <input class="form-control" name="last_name" placeholder="last name">\n' +
@@ -135,12 +135,12 @@
                             '        <input class="form-control input-submit" type="submit" value="Submit">\n' +
                             '    </form>\n' +
                             '</div><h4 class="bolda">Company</h4><span>'
-                            + data[i - 1].company + '</span><h4 class="bolda">Location</h4><span>'
-                            + data[i - 1].location + '</span><h4 class="bolda">Type</h4><span>'
-                            + data[i - 1].type + '</span><a href="'
-                            + data[i - 1].company_url + '"><img src="'
-                            + data[i - 1].company_logo + '" alt="logo"></a><h4 class="bolda">Detail</h4><p></p>'
-                            + data[i - 1].description + '</div>')
+                            + data[i].company + '</span><h4 class="bolda">Location</h4><span>'
+                            + data[i].location + '</span><h4 class="bolda">Type</h4><span>'
+                            + data[i].type + '</span><a href="'
+                            + data[i].company_url + '"><img src="'
+                            + data[i].company_logo + '" alt="logo"></a><h4 class="bolda">Detail</h4><p></p>'
+                            + data[i].description + '</div>')
                     }
                 }
                 $('#close').show();
