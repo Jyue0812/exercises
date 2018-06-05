@@ -14,3 +14,5 @@ class Recipe(db.Model):
     title = db.Column(db.String(60))
     recipe = db.Column(db.Text)
     createdtime = db.Column(db.DateTime)
+
+

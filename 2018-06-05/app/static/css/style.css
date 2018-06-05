@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 html, body{
     font-size: 100%;
 	background:	#fff;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Microsoft YaHei', sans-serif;
 }
 p,body{
 	margin:0;
@@ -1881,4 +1881,18 @@ h2.typoh2{
     top: 0;
     left: 0;
     background-color: #e0e0e0;
+    
+}
+
+.topNav ul li {
+    list-style: none;
+    float: right;
+    color: #fff;
+    line-height: 60px;
+}
+
+.topNav ul li a {
+    color: #000;
+    margin-left: 20px;
+    font-weight: 700;
 }
