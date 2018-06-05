@@ -8,5 +8,4 @@ def create_app(config_name):
     app.config.from_object(config.get(config_name or 'default'))
     config_extensions(app)
     register_blueprint(app)
-    register_blueprint(app)
     return app

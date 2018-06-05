@@ -1,6 +1,11 @@
-from app.admin import admin as admin_blueprint
-from app.admin import admin as home_blueprint
-from manage import app
+from flask import Flask
+from app.config import config
+from app.extension import config_extensions
+from app.views import register_blueprint
 
-app.register_blueprint(admin_blueprint, url_prefix='/admin')
-app.register_blueprint(home_blueprint, url_prefix='/home')
+def create_app(config_name):
+    app = Flask(__name__)
+    app.config.from_object(config.get(config_name or 'default'))
+    config_extensions(app)
+    register_blueprint(app)
+    return app
