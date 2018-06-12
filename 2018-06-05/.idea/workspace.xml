@@ -315,7 +315,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -410,13 +410,13 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.51599145" side_tool="true" visible="true" weight="0.23567568" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5165245" side_tool="true" visible="true" weight="0.23567568" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="2" weight="0.32843137" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.32756758" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" sideWeight="0.48400852" visible="true" weight="0.23567568" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.28304905" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" sideWeight="0.48347548" visible="true" weight="0.23567568" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.28624734" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.18869936" />
       <window_info anchor="right" id="SciView" order="3" />

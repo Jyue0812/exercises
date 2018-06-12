@@ -9,7 +9,6 @@ mains = Blueprint('main', __name__)
 
 
 @mains.route('/', methods=['GET','POST'])
-@login_required
 def index():
     form = PostForm()
     if form.validate_on_submit():
