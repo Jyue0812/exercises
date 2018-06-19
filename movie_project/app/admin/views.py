@@ -1,8 +1,8 @@
 from flask import render_template, redirect, url_for, flash, request, session
 from functools import wraps
 
-from app.models import Admin, Tag, db
-from .forms import LoginForm, TagForm
+from app.models import Admin, Tag, db, Movie
+from .forms import LoginForm, TagForm, MovieForm
 from . import admin
 
 def admin_login_req(f):
@@ -105,10 +105,30 @@ def tag_del(id=None):
     flash("删除标签成功！", "ok")
     return redirect(url_for('admin.tag_list', page = 1))
 
-@admin.route("/movie/add/")
+@admin.route("/movie/add/", methods=["GET","POST"])
 @admin_login_req
 def movie_add():
-    return render_template('admin/movie_add.html')
+    form = MovieForm()
+    if form.validate_on_submit():
+        data = form.data
+        movie = Movie(
+            title = data["title"],
+            url=url,
+            info = data["info"],
+            logo=logo,
+            star=data["star"],
+            playnum=0,
+            commentnum=0,
+            tag_id=data["tag_id"],
+            area=data["area"],
+            release_time=data["release_time"],
+            length=data["length"],
+        )
+        db.session.add(movie)
+        db.session.commit()
+        flash("添加电影成功！","ok")
+        return redirect(url_for('admin.movie_list'))
+    return render_template('admin/movie_add.html', form=form)
 
 
 @admin.route("/movie/list/")
