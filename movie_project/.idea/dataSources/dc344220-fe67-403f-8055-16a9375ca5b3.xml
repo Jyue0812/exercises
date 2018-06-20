@@ -51,10 +51,12 @@
     <index id="25" parent="6" name="sqlite_autoindex_admin_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>name</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="26" parent="6" name="ix_admin_addtime">
       <ColNames>addtime</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="27" parent="6">
       <ColNames>id</ColNames>
@@ -87,6 +89,7 @@
     </column>
     <index id="34" parent="7" name="ix_adminlog_addtime">
       <ColNames>addtime</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="35" parent="7">
       <ColNames>id</ColNames>
@@ -116,15 +119,18 @@
     <index id="41" parent="8" name="sqlite_autoindex_auth_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>name</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="42" parent="8" name="sqlite_autoindex_auth_2">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>url</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="43" parent="8" name="ix_auth_addtime">
       <ColNames>addtime</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="44" parent="8">
       <ColNames>id</ColNames>
@@ -160,6 +166,7 @@
     </column>
     <index id="52" parent="9" name="ix_comment_addtime">
       <ColNames>addtime</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="53" parent="9">
       <ColNames>id</ColNames>
@@ -230,20 +237,24 @@
     <index id="69" parent="10" name="sqlite_autoindex_movie_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>title</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="70" parent="10" name="sqlite_autoindex_movie_2">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>url</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="71" parent="10" name="sqlite_autoindex_movie_3">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>logo</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="72" parent="10" name="ix_movie_addtime">
       <ColNames>addtime</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="73" parent="10">
       <ColNames>id</ColNames>
@@ -284,6 +295,7 @@
     </column>
     <index id="82" parent="11" name="ix_moviecol_addtime">
       <ColNames>addtime</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="83" parent="11">
       <ColNames>id</ColNames>
@@ -321,6 +333,7 @@
     </column>
     <index id="91" parent="12" name="ix_oplog_addtime">
       <ColNames>addtime</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="92" parent="12">
       <ColNames>id</ColNames>
@@ -350,15 +363,18 @@
     <index id="98" parent="13" name="sqlite_autoindex_preview_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>title</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="99" parent="13" name="sqlite_autoindex_preview_2">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>logo</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="100" parent="13" name="ix_preview_addtime">
       <ColNames>addtime</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="101" parent="13">
       <ColNames>id</ColNames>
@@ -391,10 +407,12 @@
     <index id="108" parent="14" name="sqlite_autoindex_role_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>name</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="109" parent="14" name="ix_role_addtime">
       <ColNames>addtime</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="110" parent="14">
       <ColNames>id</ColNames>
@@ -438,10 +456,12 @@
     <index id="120" parent="16" name="sqlite_autoindex_tag_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>name</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="121" parent="16" name="ix_tag_addtime">
       <ColNames>addtime</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="122" parent="16">
       <ColNames>id</ColNames>
@@ -490,30 +510,36 @@
     <index id="133" parent="17" name="sqlite_autoindex_user_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>name</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="134" parent="17" name="sqlite_autoindex_user_2">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>email</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="135" parent="17" name="sqlite_autoindex_user_3">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>phone</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="136" parent="17" name="sqlite_autoindex_user_4">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>face</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="137" parent="17" name="sqlite_autoindex_user_5">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>uuid</ColNames>
+      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="138" parent="17" name="ix_user_addtime">
       <ColNames>addtime</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="139" parent="17">
       <ColNames>id</ColNames>
@@ -557,6 +583,7 @@
     </column>
     <index id="149" parent="18" name="ix_userlog_addtime">
       <ColNames>addtime</ColNames>
+      <ColumnCollations></ColumnCollations>
     </index>
     <key id="150" parent="18">
       <ColNames>id</ColNames>
