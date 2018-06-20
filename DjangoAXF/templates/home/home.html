@@ -1,0 +1,40 @@
+{% extends 'base_main.html' %}
+{% load static %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/home/home.css' %}">
+{% endblock %}
+{% block content %}
+    <div id="home">
+        <div class="swiper-container" id="topSwiper">
+            <div class="swiper-wrapper">
+                {% for foo in wheels %}
+                    <div class="swiper-slide">
+                        <a href="#">
+                            <img src="{{ foo.img }}" alt="{{ foo.name }}">
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+
+        </div>
+        <div class="topMenu">
+            <nav>
+                <ul>
+                    {% for nav in navs %}
+                    <li><img src="{{ nav.img }}" alt="{{ nav.name }}">
+                    <span>{{ nav.name }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/home/home.js' %}"></script>
+{% endblock %}

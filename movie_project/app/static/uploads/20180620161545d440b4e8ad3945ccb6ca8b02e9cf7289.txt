@@ -1,0 +1,67 @@
+1. HttpRequest,HttpResponse
+	csrf 防跨站攻击。 在form里面加上 
+										{% csrf_token%} 标签即可
+	
+	request.path
+	request.method
+	request.GET      request.GET.get('name',"default")
+							  request.GET['name'] 如果没取到会报错
+							  request.GET.getlist('hoppy') 获取一组值
+	request.POST
+	
+	
+2: 静态资源分离
+	2.1 如果debug开关关闭，开发服务器是不提供静态资源的访问的
+	2.2 Django开发者服务器，对于html修改是不会自动重启的，需要手动重启
+	
+	2.3 修改setting.py文件
+		2.3.1 
+			STATIC_URL = '/static'
+			STATICFILES_DIRS = {
+				os.path.join(BASE_DIR,'static'),
+			}
+	2.4 在html页面添加
+		{%load static%}     顶部
+		{% static 'css/ts.css'%} 加载资源文件的href或者src
+		
+	2.5 动静态资源分离
+		2.5.1 动态：放在Django，可以使用Django的语法
+		2.5.2 静态：仅仅只支持html标签，以及css，js倒入。
+		
+		
+3: cookie 应用
+	
+		3.1 cookie 。  客户端会话技术
+			3.1.1 实现login。
+			3.1.2 max_age = 0   // 关闭浏览器就清除
+			3.1.3 max_age = None // 永久有效
+			3.1.3 max_age = int  //单位为秒数
+			3.1.4 expires 和3.1.2类似，多了一个时间差。可以指定单位 timedelta(minutes=1)
+			3.1.5 最好不要一起使用
+
+	练习： 用户登陆，使用cookie保存用户名， 退出登陆，清除cookie用户名。
+	
+4: session应用  服务端的会话技术
+		4.1 session依赖于cookie
+		4.2 session_data 可以使用base64解码
+		4.3 默认过期时间一周，flask默认一个月
+
+	练习：清除回话登陆信息
+	
+5: token 。 令牌
+	5.1 md5  信息加密，不可逆推。
+	5.2 md5 默认输出 128位  二进制数据。 十六进制转字符串。  32位的十六进制。一个十六进制代表一个字符
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+

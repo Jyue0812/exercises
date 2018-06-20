@@ -102,6 +102,7 @@ class Movie(db.Model):
     release_time = db.Column(db.Date)
     length = db.Column(db.String(100))
     addtime = db.Column(db.DateTime, index=True, default=datetime.now())
+    tag = db.relationship("Tag", backref="movie")
     comments = db.relationship("Comment", backref="movie")
     moviecols = db.relationship("Moviecol", backref="movie")
 

@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, FileField, TextAreaField, SelectField
+from wtforms import StringField, PasswordField, SubmitField, FileField, TextAreaField, SelectField, DateField
 from wtforms.validators import DataRequired, ValidationError
 from app.models import Admin, Tag
 
@@ -154,7 +154,7 @@ class MovieForm(FlaskForm):
             "placeholder": "请输入片长！"
         }
     )
-    release_time = StringField(
+    release_time = DateField(
         label="上映时间",
         validators=[
             DataRequired("请选择上映时间")
@@ -173,3 +173,30 @@ class MovieForm(FlaskForm):
             "class": "btn btn-primary"
         }
     )
+class PreviewForm(FlaskForm):
+    title = StringField(
+        label="预告标题",
+        validators=[
+            DataRequired("请输入预告标题")
+        ],
+        description="预告标题",
+        render_kw={
+
+            "class": "form-control",
+            "placeholder": "请输入预告标题！"
+        }
+    )
+    logo = FileField(
+        label="预告封面",
+        validators=[
+            DataRequired("请上传预告封面")
+        ],
+        description="预告封面",
+    )
+    submit = SubmitField(
+        "编辑",
+        render_kw={
+            "class": "btn btn-primary"
+        }
+    )
+
