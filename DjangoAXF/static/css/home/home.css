@@ -29,10 +29,6 @@
   background-size:0.513889rem;
 }
 
-
-
-.topMenu {
-  padding-bottom: 0.26rem; }
 .topMenu nav {
   margin: 0.35rem 0 0.26rem;
   background: white; }
@@ -58,11 +54,10 @@
   width: 100%; }
 
 
-
-
-
 .CVS {
   background: white; }
+
+
 .CVS h2 img {
   width: 100%; }
 
@@ -111,6 +106,7 @@
   width: 9.2rem; }
 .mainInfo > section h3 {
   text-align: center;
+  font-size: 20px;
   height: 1.2rem;
   position: relative; }
 .mainInfo > section h3 a {
@@ -164,17 +160,18 @@
 .mainInfo > section > ul > li > button {
   border: 1px solid lightgrey;
   border-radius: 1111px;
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 0.6rem;
+  height: 0.6rem;
   display: block;
   line-height: 0.0rem;
   text-align: center;
   color: orangered;
-  font-size: 0.8rem;
+  /*font-size: 0.6rem;*/
   position: absolute;
   right: 0;
-  top: 3.6rem;
-  background: white; }
+  top: 3.5rem;
+  background: white;
+}
 .mainInfo > section > ul > li > button > span {
   position: relative;
   top: -0.05rem;

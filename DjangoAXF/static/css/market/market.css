@@ -15,7 +15,7 @@ aside {
   float: left;
   position: relative;
   background: #fafafa;
-  overflow: hidden;
+  overflow: auto;
   height:100%}
 aside ul {
   background: #fafafa; }
@@ -133,7 +133,7 @@ section menu ul li a img {
 .detailTag {
   margin: 0.2rem 0; }
 .detailTag span {
-  border: 0.05rem solid red;
+  border: 0.03rem solid red;
   border-radius: 0.15rem;
   padding: 0 0.1rem;
   color: white;
@@ -141,6 +141,7 @@ section menu ul li a img {
   margin-right: 0.3rem; }
 .detailTag span:first-child {
   background: white;
+  font-size:16px;
   color: red; }
 /******单位**********/
 .unit {
@@ -194,11 +195,13 @@ li > section > span {
 
 /************分类********************************/
 section menu > div {
+    z-index: 1;
   position: fixed;
-  top: 2.7rem;
+  top: 3rem;
   left: 2.55rem;
   width: 7.45rem;
   height: 100%;
+    /*opacity: .5;*/
   background: rgba(0, 0, 0, 0.5);
   color: grey; }
 
