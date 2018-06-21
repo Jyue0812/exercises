@@ -36,6 +36,7 @@ class Admin(db.Model):
     role_id = db.Column(db.Integer, db.ForeignKey('role.id'))
     addtime = db.Column(db.DateTime, index=True, default=datetime.now())
     adminlogs =db.relationship("Adminlog", backref='admin')
+    role =db.relationship("Role", backref='admin')
     oplogs = db.relationship("Oplog", backref='admin')
 
     def __repr__(self):
