@@ -1,6 +1,7 @@
 from datetime import datetime
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import check_password_hash
 import os
 
 app = Flask(__name__)
@@ -26,6 +27,9 @@ class User(db.Model):
 
     def __repr__(self):
         return "<User %r>" % self.name
+
+    def check_pwd(self, pwd):
+        return check_password_hash(self.pwd, pwd)
 
 class Admin(db.Model):
     __tablename__ = "admin"
