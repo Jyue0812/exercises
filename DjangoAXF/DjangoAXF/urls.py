@@ -24,4 +24,7 @@ urlpatterns = [
     path('market/', views.market),
     path('cart/', views.cart),
     path('mine/', views.mine),
+    path('add_shopcar/', views.add_shopcar),
+    path('sub_shopcar/', views.sub_shopcar),
+    # path('login/', views.login),
 ]

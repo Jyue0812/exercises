@@ -67,6 +67,12 @@
                                     <p class="price"><span>{{ foo.price }}</span><s>{{ foo.marketprice }}</s></p>
                                 </div>
                             </a>
+                            <section>
+                                <button id="minShopCar"  goodsid = {{ foo.productid }} class="subShopping">-</button>
+                                <span id="shopcar_number">0</span>
+                                <button id="plusShopCar" goodsid = {{ foo.productid }} class="addShopping">+</button>
+
+                            </section>
                         </li>
                     {% endfor %}
                 </ul>

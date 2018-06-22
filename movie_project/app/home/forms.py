@@ -133,7 +133,6 @@ class UserdetailForm(FlaskForm):
             DataRequired("请上传头像！")
         ],
         description="头像",
-
     )
     info = TextAreaField(
         label="简介",
@@ -147,8 +146,72 @@ class UserdetailForm(FlaskForm):
         }
     )
     submit = SubmitField(
-        '<span class="glyphicon glyphicon-saved"></span>保存修改',
+        '保存修改',
         render_kw={
             "class": "btn btn-success",
         }
     )
+
+
+class LoginForm(FlaskForm):
+    name = StringField(
+        label="账号",
+        validators=[
+            DataRequired("请输入账号！")
+        ],
+        description="账号",
+        render_kw={
+            "class": "form-control input-lg",
+            "placeholder": "请输入账号！",
+        }
+    )
+    pwd = PasswordField(
+        label="密码",
+        validators=[
+            DataRequired("请输入密码！")
+        ],
+        description="密码",
+        render_kw={
+            "class": "form-control input-lg",
+            "placeholder": "请输入密码！",
+        }
+    )
+    submit = SubmitField(
+        "登录  ",
+        render_kw={
+            "class": "btn btn-lg btn-primary btn-block",
+        }
+    )
+
+
+class PwdForm(FlaskForm):
+    old_pwd = PasswordField(
+        label="旧密码",
+        validators=[
+            DataRequired("请输入旧密码！")
+        ],
+        description="旧密码",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入旧密码！",
+            # "required": "required"
+        }
+    )
+    new_pwd = PasswordField(
+        label="新密码",
+        validators=[
+            DataRequired("请输入新密码！")
+        ],
+        description="新密码",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入新密码！",
+        }
+    )
+    submit = SubmitField(
+        "修改密码",
+        render_kw={
+            "class": "btn btn-success"
+        }
+    )
+

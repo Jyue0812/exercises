@@ -1,6 +1,9 @@
 from django.db import models
 
 # Create your models here.
+from django.db.models import CASCADE
+
+
 class BaseModel(models.Model):
     img = models.CharField(max_length=200)
     name = models.CharField(max_length=100)
@@ -96,3 +99,17 @@ class Goods(models.Model):
 
     class Meta:
         db_table= 'axf_goods'
+
+
+class UserInfo(models.Model):
+    user_name = models.CharField(max_length=20)
+    user_pass = models.CharField(max_length=20)
+
+    class Meta:
+        db_table = 'axf_userinfo'
+
+
+class ShopCar(models.Model):
+    goods =models.ForeignKey(Goods, on_delete=CASCADE)
+    # user = models.ForeignKey(UserInfo, on_delete=CASCADE)
+    number = models.IntegerField(default=1)
