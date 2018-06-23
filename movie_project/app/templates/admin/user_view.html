@@ -48,7 +48,13 @@
                         <tr>
                             <td class="td_bd">头像：</td>
                             <td>
-                                <img style="width:100px;" src="{{ url_for }}" class="img-responsive" alt="">
+                                {% if v.user.face %}
+                                            <img alt="50x50" src="{{ url_for('static', filename='uploads/users/' + v.user.face) }}" class="img-circle"
+                                         style="border:1px solid #abcdef;width: 50px;height: 50px">
+                                        {% else %}
+                                            <img alt="50x50" data-src="holder.js/100x100" class="img-circle"
+                                         style="border:1px solid #abcdef;width: 50px;height: 50px">
+                                        {% endif %}
                             </td>
                         </tr>
                         <tr>
