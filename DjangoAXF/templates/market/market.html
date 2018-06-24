@@ -11,7 +11,7 @@
             <ul>
                 {% for foo in foodtypes %}
                     <li>
-                        <a href="/market/?typeid={{ foo.typeid }}">{{ foo.typename }}</a>
+                        <a href="/market/?typeid={{ foo.typeid }}&childid=0">{{ foo.typename }}</a>
                         {% ifequal typeid foo.typeid %}
                             <span class="yellowSlide"></span>
                         {% endifequal %}
@@ -30,6 +30,7 @@
                 <div id="alltype" style="display: none">
                     <div>
                         {% for foo in childList %}
+
                         <a href="/market/?typeid={{ typeid }}&childid={{ foo.id }}">
                             <span>{{ foo.name }}</span>
                         </a>

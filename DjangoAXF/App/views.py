@@ -39,18 +39,7 @@ def market(request):
     fts = FoodTypes.objects.filter(typeid=typeid).first()
     child = fts.childtypenames
 
-    if childid == 0:
-        goods = Goods.objects.filter(categoryid=typeid)
-    else:
-        goods = Goods.objects.filter(categoryid=typeid, childcid=childid)
 
-    #
-    # if orderby == 1:
-    #     goods.order_by("productnum")
-    # elif orderby ==2:
-    #     goods.order_by("price")
-    # elif orderby ==3:
-    #     goods.order_by("price")
 
     childList = []
     for foo in child.split("#"):
@@ -58,6 +47,20 @@ def market(request):
         obj = {"name": ft[0],
                "id": ft[1]}
         childList.append(obj)
+        print(obj)
+
+    if int(childid) == 0:
+        goods = Goods.objects.filter(categoryid=typeid)
+    else:
+        goods = Goods.objects.filter(categoryid=typeid, childcid=childid)
+
+
+    if int(orderby) == 1:
+        goods = goods.order_by("productnum")
+    elif int(orderby) == 2:
+        goods = goods.order_by("price")
+    elif int(orderby) == 3:
+        goods = goods.order_by("-price")
 
     data = {
         "title": "闪购超市",
